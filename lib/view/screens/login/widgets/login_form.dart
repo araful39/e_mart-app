@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:morder_ecommerce_app/controller/ui_controller/login_controller.dart';
+import 'package:morder_ecommerce_app/navigation_menu.dart';
 import 'package:morder_ecommerce_app/utills/constants/colors.dart';
 import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
 import 'package:morder_ecommerce_app/utills/constants/texts.dart';
@@ -103,7 +104,9 @@ class _CustomLoginFormState extends State<CustomLoginForm> {
                             style: ButtonStyle(
                                 backgroundColor:
                                     WidgetStateProperty.all(Colors.grey)),
-                            onPressed: () {},
+                            onPressed: () {
+                              Get.offAll(()=>const NavigationBarScreen());
+                            },
                             child: const Text(AppTexts.signIn))),
               ),
               const SizedBox(
