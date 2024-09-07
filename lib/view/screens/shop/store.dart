@@ -8,10 +8,10 @@ import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/appbar/appbar.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/appbar/tapbar.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/brand/brand_card.dart';
+import 'package:morder_ecommerce_app/view/common/widgets/custom_search_bar.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/layout/grid_layout.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/products/cart_menu_icon.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/texts/section_heading.dart';
-import 'package:morder_ecommerce_app/view/screens/home/widgets/home_searchbar.dart';
 import 'package:morder_ecommerce_app/view/screens/shop/view_brand.dart';
 import 'package:morder_ecommerce_app/view/screens/shop/widget/category_tab.dart';
 
@@ -53,8 +53,8 @@ class StoreScreen extends StatelessWidget {
                       const SizedBox(
                         height: KSizes.lg,
                       ),
-                      const CustomSearchContainer(
-                        padding: EdgeInsets.zero,
+                       CustomSearchContainer(
+                        padding: EdgeInsets.zero, onpress: () {  },
                       ),
                       const SizedBox(
                         height: KSizes.defaultBtwSections / 3,

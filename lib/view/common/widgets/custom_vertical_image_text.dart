@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:morder_ecommerce_app/utills/constants/colors.dart';
 import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
@@ -9,8 +8,8 @@ class CustomVerticalImageText extends StatelessWidget {
     required this.text,
     required this.netImagePath,
     this.backgroundColor,
-   this.textColor,
-   this.onpress,
+    this.textColor,
+    this.onpress,
   });
   final String text;
   final String netImagePath;
@@ -40,6 +39,9 @@ class CustomVerticalImageText extends StatelessWidget {
                 ),
               ),
             ),
+            const SizedBox(
+              height: KSizes.sm,
+            ),
             SizedBox(
                 width: 50,
                 child: Text(
@@ -47,7 +49,7 @@ class CustomVerticalImageText extends StatelessWidget {
                   style: Theme.of(context)
                       .textTheme
                       .labelLarge!
-                      .apply(color:textColor?? AppColores.white),
+                      .apply(color: textColor ?? AppColores.white),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ))

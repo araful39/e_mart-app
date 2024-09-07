@@ -17,7 +17,7 @@ static const String tSearch="Search in Store";
 
 // --Home
   static const String homeAppbarTitle="Good day for shopping";
-  static const String homeAppbarSubTitle="Md. Araful islam";
+  static const String homeAppbarSubTitle="Md.Araful islam";
 
   // TextFormalised Form Text
 

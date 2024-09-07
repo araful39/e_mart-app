@@ -9,7 +9,7 @@ import 'package:morder_ecommerce_app/view/common/widgets/list_tile/settings_menu
 import 'package:morder_ecommerce_app/view/common/widgets/texts/section_heading.dart';
 import 'package:morder_ecommerce_app/view/screens/address/address.dart';
 import 'package:morder_ecommerce_app/view/screens/cart/cart.dart';
-import 'package:morder_ecommerce_app/view/screens/login/login.dart';
+import 'package:morder_ecommerce_app/view/screens/signin/signin.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -134,7 +134,7 @@ class SettingsScreen extends StatelessWidget {
                     width: double.infinity,
                     child: OutlinedButton(
                         onPressed: () async {
-                          Get.offAll(const LoginScreen());
+                          Get.offAll(const SignInScreen());
                         },
                         child: const Text("LogOut")),
                   )

@@ -5,7 +5,7 @@ import 'package:morder_ecommerce_app/controller/ui_controller/verify_controller.
 import 'package:morder_ecommerce_app/utills/constants/image_strings.dart';
 import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
 import 'package:morder_ecommerce_app/utills/constants/texts.dart';
-import 'package:morder_ecommerce_app/view/screens/login/login.dart';
+import 'package:morder_ecommerce_app/view/screens/signin/signin.dart';
 
 class VerifyEmailScreen extends StatelessWidget {
   const VerifyEmailScreen({super.key});
@@ -18,7 +18,7 @@ class VerifyEmailScreen extends StatelessWidget {
         automaticallyImplyLeading: false,
         actions: [
           IconButton(
-              onPressed: () => Get.offAll(() => const LoginScreen()),
+              onPressed: () => Get.offAll(() => const SignInScreen()),
               icon: const Icon(CupertinoIcons.clear))
         ],
       ),

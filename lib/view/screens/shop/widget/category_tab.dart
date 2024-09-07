@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:morder_ecommerce_app/utills/constants/image_strings.dart';
 import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/brand/brand_show_case.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/layout/grid_layout.dart';
@@ -36,7 +38,17 @@ class CustomCategoryTap extends StatelessWidget {
                 itemCount: gridImage.length,
                 itemBuilder: (_, index) {
                   return CustomProductCardVertical(
-                    imagePath: gridImage[index],
+                    imagePath: AppImages.shoes3,
+                    discount: '25',
+                    productName: 'Green Nike Air Shoes',
+                    brandName: 'Nike',
+                    price: '300',
+                      addToCart: () {
+                        EasyLoading.showSuccess("Add To Cart");
+                      },
+                      addToLove: () {
+                        EasyLoading.showSuccess("Add To Favorite");
+                      },
                   );
                 })
           ],

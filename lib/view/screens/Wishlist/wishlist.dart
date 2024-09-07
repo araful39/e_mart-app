@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:morder_ecommerce_app/utills/constants/image_strings.dart';
 import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
@@ -32,8 +33,19 @@ class FavouriteScreen extends StatelessWidget {
             children: [
               CustomGridLayout(
                   itemCount: 6,
-                  itemBuilder: (_, index) => const CustomProductCardVertical(
-                      imagePath: AppImages.shoes3))
+                  itemBuilder: (_, index) => CustomProductCardVertical(
+                        imagePath: AppImages.shoes3,
+                        discount: '25',
+                        productName: 'Green Nike Air Shoes',
+                        brandName: 'Nike',
+                        price: '300',
+                        addToCart: () {
+                          EasyLoading.showSuccess("Add To Cart");
+                        },
+                        addToLove: () {
+                          EasyLoading.showSuccess("Add To Favorite");
+                        },
+                      ))
             ],
           ),
         ),

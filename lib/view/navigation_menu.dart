@@ -8,8 +8,8 @@ import 'package:morder_ecommerce_app/view/screens/settings/settings.dart';
 import 'package:morder_ecommerce_app/view/screens/shop/store.dart';
 
 
-class NavigationBarScreen extends StatelessWidget {
-  const NavigationBarScreen({super.key});
+class BottomNavigationBarScreen extends StatelessWidget {
+  const BottomNavigationBarScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

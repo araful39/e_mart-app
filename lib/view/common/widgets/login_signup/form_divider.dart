@@ -15,7 +15,7 @@ class CustomFormDivider extends StatelessWidget {
       children: [
         const Flexible(
             child: Divider(
-          color: AppColores.grey,
+          color: AppColores.black,
           thickness: 0.5,
           indent: 60,
           endIndent: 5,
@@ -26,7 +26,7 @@ class CustomFormDivider extends StatelessWidget {
         ),
         const Flexible(
             child: Divider(
-          color: AppColores.grey,
+          color: AppColores.black,
           thickness: 0.5,
           indent: 5,
           endIndent: 60,

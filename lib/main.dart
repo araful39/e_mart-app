@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:morder_ecommerce_app/view/screens/splash/splash.dart';
+import 'package:morder_ecommerce_app/view/screens/Wishlist/wishlist.dart';
+import 'package:morder_ecommerce_app/view/screens/home/home.dart';
 
-Future<void> main() async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await GetStorage.init();
@@ -14,13 +16,13 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
+    return GetMaterialApp(
+        builder: EasyLoading.init(),
         debugShowCheckedModeBanner: false,
         title: 'e-Mart ',
         themeMode: ThemeMode.light,
-        home: SplashScreen());
+        home: FavouriteScreen());
   }
 }

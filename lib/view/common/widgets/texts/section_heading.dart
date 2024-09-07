@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
 
 class CustomSectionHeading extends StatelessWidget {
   const CustomSectionHeading({
@@ -8,7 +8,8 @@ class CustomSectionHeading extends StatelessWidget {
     this.onpress,
     this.subText,
     this.showActionButton = false,
-    this.textColor, this.buttonColor,
+    this.textColor,
+    this.buttonColor,
   });
   final String name;
   final Color? textColor;
@@ -23,10 +24,10 @@ class CustomSectionHeading extends StatelessWidget {
       children: [
         Text(
           name,
-          style: Theme.of(context)
-              .textTheme
-              .headlineSmall!
-              .apply(color: textColor ?? Colors.grey),
+          style: TextStyle(
+              color: textColor ?? Colors.white,
+              fontSize: KSizes.fontSizeLg,
+              fontWeight: FontWeight.bold),
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),
@@ -35,7 +36,9 @@ class CustomSectionHeading extends StatelessWidget {
               onPressed: onpress,
               child: Text(
                 subText ?? "view ",
-                style: Theme.of(context).textTheme.bodySmall!.apply(color: buttonColor ?? Colors.black),
+                style: TextStyle(
+                    color: textColor ?? Colors.white,
+                    fontSize: KSizes.fontSizeLg),
               )),
       ],
     );

@@ -1,65 +1,49 @@
-class AppValidator{
+import 'package:get/get_utils/src/get_utils/get_utils.dart';
 
-
-  static String? validateEmptyText(String? fieldName, String? value){
-    if(value ==null || value.isEmpty){
+class AppValidator {
+  static String? validateEmptyText(String? fieldName, String? value) {
+    if (value == null || value.isEmpty) {
       return "$fieldName is required";
     }
     return null;
-
-
-
   }
 
-  static String? validateEmail(String? value){
-    if(value==null || value.isEmpty){
-      return "Email is required";
+  static String? validateEmail(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Email is required';
     }
-    // final emailRegExp = RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
-    // if(emailRegExp.hasMatch(value)){
-    // return "Invalid email address";
-    //
-    // }
-
-    return null;
+    if (!GetUtils.isEmail(value)) {
+      return 'Enter a valid email';
+    }
+    return null; // Return null if valid
   }
 
-
-  static String? validatePassword(String? value){
-    if(value==null || value.isEmpty){
+  static String? validatePassword(String? value) {
+    if (value == null || value.isEmpty) {
       return "Password is required";
     }
-    
-    if(value.length<6){
+
+    if (value.length < 6) {
       return "Password must be att least 6 characters long";
-
     }
-    
-    if(value.contains(RegExp(r'[A-Z]'))){
+
+    if (value.contains(RegExp(r'[A-Z]'))) {
       return "Password must contains at least one uppercase letter";
-
     }
-    // if(value.contains(RegExp(r'[0-9]'))){
-    //   return "Password must contains at least one spacial characters.";
-    //
-    // }
+
     return null;
   }
 
-  static String? validatePhoneNumber(String? value){
-    if(value==null || value.isEmpty){
+  static String? validatePhoneNumber(String? value) {
+    if (value == null || value.isEmpty) {
       return "Phone Number is required";
     }
 
-    final phoneRegExp=RegExp(r'^\d(10)$');
+    final phoneRegExp = RegExp(r'^\d(10)$');
 
-
-    if(phoneRegExp.hasMatch(value)){
+    if (phoneRegExp.hasMatch(value)) {
       return "Invalid phone number format (10 digit required)";
-
     }
     return null;
   }
-
-
 }

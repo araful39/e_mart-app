@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:morder_ecommerce_app/utills/constants/colors.dart';
 import 'package:morder_ecommerce_app/utills/constants/image_strings.dart';
@@ -16,23 +15,27 @@ class CustomSocialButton extends StatelessWidget {
       children: [
         Container(
             decoration: BoxDecoration(
-                color: AppColores.grey,borderRadius: BorderRadius.circular(100)
-            ),
-            child:
-            IconButton(
-                onPressed: (){},
-                icon:
-                const Image(height: KSizes.iconMd,width: KSizes.iconMd,image: AssetImage(AppImages.google)))),
-        const SizedBox(width: KSizes.spaceBtwItems,),
+                color: AppColores.grey,
+                borderRadius: BorderRadius.circular(100)),
+            child: IconButton(
+                onPressed: () {},
+                icon: const Image(
+                    height: KSizes.iconMd,
+                    width: KSizes.iconMd,
+                    image: AssetImage(AppImages.google)))),
+        const SizedBox(
+          width: KSizes.spaceBtwItems,
+        ),
         Container(
             decoration: BoxDecoration(
-                color: AppColores.grey,borderRadius: BorderRadius.circular(100)
-            ),
-            child:
-            IconButton(
-                onPressed: (){},
-                icon:
-                const Image(height: KSizes.iconMd,width: KSizes.iconMd,image: AssetImage(AppImages.facebook)))),
+                color: AppColores.grey,
+                borderRadius: BorderRadius.circular(100)),
+            child: IconButton(
+                onPressed: () {},
+                icon: const Image(
+                    height: KSizes.iconMd,
+                    width: KSizes.iconMd,
+                    image: AssetImage(AppImages.facebook)))),
       ],
     );
   }

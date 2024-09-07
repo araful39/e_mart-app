@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:morder_ecommerce_app/utills/constants/image_strings.dart';
 import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
 import 'package:morder_ecommerce_app/utills/constants/texts.dart';
-import 'package:morder_ecommerce_app/view/screens/login/login.dart';
+import 'package:morder_ecommerce_app/view/screens/signin/signin.dart';
 
 class ResetPassword extends StatelessWidget {
   const ResetPassword({super.key});
@@ -51,7 +51,7 @@ class ResetPassword extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () => Get.to(() => const LoginScreen()),
+                  onPressed: () => Get.to(() => const SignInScreen()),
                   child: const Text(AppTexts.done),
                 ),
               ),
