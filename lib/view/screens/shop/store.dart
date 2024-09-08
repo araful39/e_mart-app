@@ -1,14 +1,14 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:morder_ecommerce_app/utills/constants/colors.dart';
 import 'package:morder_ecommerce_app/utills/constants/image_strings.dart';
 import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
+import 'package:morder_ecommerce_app/utills/constants/texts.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/appbar/appbar.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/appbar/tapbar.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/brand/brand_card.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/custom_search_bar.dart';
+import 'package:morder_ecommerce_app/view/common/widgets/custom_shapes/container/primary_header_container.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/layout/grid_layout.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/products/cart_menu_icon.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/texts/section_heading.dart';
@@ -23,110 +23,135 @@ class StoreScreen extends StatelessWidget {
     return DefaultTabController(
       length: 5,
       child: Scaffold(
-        appBar: CustomAppBar(
-          title: Text(
-            "Store",
-            style: Theme.of(context).textTheme.headlineMedium,
-          ),
-          actions: [
-            CustomCardCounterIcon(
-              onpress: () {},
-              iconColor: AppColores.black,
-            ),
-          ],
-        ),
-        body: NestedScrollView(
-          headerSliverBuilder: (context, innerBoxIsScrolled) {
-            return [
-              SliverAppBar(
-                automaticallyImplyLeading: false,
-                pinned: true,
-                floating: true,
-                backgroundColor: AppColores.white,
-                expandedHeight: 340,
-                flexibleSpace: Padding(
-                  padding: const EdgeInsets.all(KSizes.sm),
-                  child: ListView(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
+        body: SafeArea(
+          child: Column(
+            children: [
+              CustomPrimaryHeaderContainer(
+                headerHeight: 100,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: KSizes.md,vertical: KSizes.md),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const SizedBox(
-                        height: KSizes.lg,
+                      Text(
+                        "Store",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: KSizes.fontSizeXl,
+                            color: AppColores.white),
                       ),
-                       CustomSearchContainer(
-                        padding: EdgeInsets.zero, onpress: () {  },
+                      CustomCardCounterIcon(
+                        onpress: () {},
+                        iconColor: AppColores.white,
                       ),
-                      const SizedBox(
-                        height: KSizes.defaultBtwSections / 3,
-                      ),
-                      CustomSectionHeading(
-                        name: "Featured Brands",
-                        showActionButton: true,
-                        subText: "view all",
-                        onpress: () => Get.to(() => const AllBrand()),
-                      ),
-                      const SizedBox(
-                        height: KSizes.spaceBtwItems / 1.5,
-                      ),
-                      CustomGridLayout(
-                          itemCount: 4,
-                          mainAxisExtent: 60,
-                          itemBuilder: (context, index) {
-                            return GestureDetector(
-                              onTap: () {},
-                              child: const CustomBrandCard(
-                                showBorder: true,
-                                brandImagePath: AppImages.shoesName,
-                                brandName: 'Nike',
-                                productQuantity: 250,
-                                isNetworkImage: false,
-                              ),
-                            );
-                          })
                     ],
                   ),
                 ),
-                bottom: const CustomTapBar(
-                  tabs: [
-                    Text("Sports"),
-                    Text("Furniture"),
-                    Text("Electronics"),
-                    Text("Clothes"),
-                    Text("Cosmetics"),
-                  ],
+              ),
+              Expanded(
+                child: NestedScrollView(
+                  headerSliverBuilder: (context, innerBoxIsScrolled) {
+                    return [
+                      SliverAppBar(
+                        automaticallyImplyLeading: false,
+                        pinned: true,
+                        scrolledUnderElevation: 0,
+                        floating: true,
+                        backgroundColor: AppColores.white,
+                        expandedHeight: 340,
+                        flexibleSpace: Padding(
+                          padding: const EdgeInsets.all(KSizes.sm),
+                          child: ListView(
+                            shrinkWrap: true,
+                            physics: const NeverScrollableScrollPhysics(),
+                            children: [
+                              const SizedBox(
+                                height: KSizes.lg,
+                              ),
+                              CustomSearchContainer(
+                                padding: EdgeInsets.zero,
+                                onpress: () {},
+                              ),
+                              const SizedBox(
+                                height: KSizes.defaultBtwSections / 3,
+                              ),
+                              CustomSectionHeading(
+                                textColor: AppColores.black,
+                                name: "Featured Brands",
+                                showActionButton: true,
+                                subText: "view all",
+                                onpress: () => Get.to(() => const AllBrand()),
+                              ),
+                              const SizedBox(
+                                height: KSizes.spaceBtwItems / 1.5,
+                              ),
+                              CustomGridLayout(
+                                  itemCount: 4,
+                                  mainAxisExtent: 65,
+                                  itemBuilder: (context, index) {
+                                    return GestureDetector(
+                                      onTap: () {},
+                                      child: const CustomBrandCard(
+                                        showBorder: true,
+                                        brandImagePath: AppImages.shoesName,
+                                        brandName: 'Nike',
+                                        productQuantity: 250,
+                                        isNetworkImage: false,
+                                      ),
+                                    );
+                                  })
+                            ],
+                          ),
+                        ),
+                        bottom: const CustomTapBar(
+                          tabs: [
+                            Text("Sports"),
+                            Text("Furniture"),
+                            Text("Electronics"),
+                            Text("Clothes"),
+                            Text("Cosmetics"),
+                          ],
+                        ),
+                      ),
+                    ];
+                  },
+                  body: const TabBarView(
+                    children: [
+                      CustomCategoryTap(
+                        images: [
+                          AppImages.shoes1,
+                          AppImages.shoes2,
+                          AppImages.shoes3
+                        ],
+                        gridImage: [
+                          AppImages.shoes3,
+                          AppImages.shoes2,
+                          AppImages.shoes2,
+                          AppImages.shoes3,
+                          AppImages.shoes2,
+                          AppImages.shoes2,
+                        ],
+                      ),
+                      CustomCategoryTap(
+                        images: [],
+                        gridImage: [],
+                      ),
+                      CustomCategoryTap(
+                        images: [],
+                        gridImage: [],
+                      ),
+                      CustomCategoryTap(
+                        images: [],
+                        gridImage: [],
+                      ),
+                      CustomCategoryTap(
+                        images: [],
+                        gridImage: [],
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ];
-          },
-          body: const TabBarView(
-            children: [
-              CustomCategoryTap(
-                images: [AppImages.shoes1, AppImages.shoes2, AppImages.shoes3],
-                gridImage: [
-                  AppImages.shoes3,
-                  AppImages.shoes2,
-                  AppImages.shoes2,
-                  AppImages.shoes3,
-                  AppImages.shoes2,
-                  AppImages.shoes2,
-                ],
-              ),
-              CustomCategoryTap(
-                images: [],
-                gridImage: [],
-              ),
-              CustomCategoryTap(
-                images: [],
-                gridImage: [],
-              ),
-              CustomCategoryTap(
-                images: [],
-                gridImage: [],
-              ),
-              CustomCategoryTap(
-                images: [],
-                gridImage: [],
-              ),
+              )
             ],
           ),
         ),

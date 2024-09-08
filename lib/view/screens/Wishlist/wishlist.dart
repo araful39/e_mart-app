@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
+import 'package:morder_ecommerce_app/utills/constants/colors.dart';
 import 'package:morder_ecommerce_app/utills/constants/image_strings.dart';
 import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/appbar/appbar.dart';
@@ -17,12 +18,16 @@ class FavouriteScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        title:
-            Text("WishList", style: Theme.of(context).textTheme.headlineMedium),
+        title: const Text("WishList",
+            style: TextStyle(
+                color: AppColores.black, fontSize: KSizes.fontSizeXl)),
         actions: [
-          CustomCircularIcon(
-            icon: CupertinoIcons.add,
-            onPress: () => Get.to(() => const HomeScreen()),
+          Padding(
+            padding: const EdgeInsets.only(right: KSizes.md),
+            child: CustomCircularIcon(
+              icon: CupertinoIcons.add,
+              onPress: () => Get.off(() => const HomeScreen()),
+            ),
           )
         ],
       ),

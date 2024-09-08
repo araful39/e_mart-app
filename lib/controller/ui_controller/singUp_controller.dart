@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
-import 'package:morder_ecommerce_app/view/navigation_menu.dart';
+import 'package:morder_ecommerce_app/view/bottom_navigation_menu.dart';
 
 class SingUpController extends GetxController {
   static SingUpController get instance => Get.find();

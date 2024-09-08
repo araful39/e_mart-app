@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:morder_ecommerce_app/utills/constants/colors.dart';
+import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
 
 class CustomCardCounterIcon extends StatelessWidget {
   const CustomCardCounterIcon({
@@ -14,13 +15,10 @@ class CustomCardCounterIcon extends StatelessWidget {
       child: InkWell(
         onTap: onpress,
         child: Badge(
-          label: Text(
+          label: const Text(
             "5",
-            style: Theme.of(context)
-                .textTheme
-                .labelLarge!
-                .apply(
-                color: AppColores.white, fontSizeFactor: 0.8),
+            style: TextStyle(
+                color: AppColores.white, fontSize: 12),
           ),
           child:  Icon(
             Icons.shopping_cart,
