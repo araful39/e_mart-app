@@ -1,8 +1,8 @@
 import '../model/product_model.dart';
 
-List<Product> dummyProducts = [
+List<ProductModel> allProductList = [
 // Electronics
-  Product(
+  ProductModel(
     id: 'E001',
     name: 'Smartphone X300',
     regularPrice: 699.99,
@@ -10,8 +10,9 @@ List<Product> dummyProducts = [
     status: 'Available',
     brand: 'Brand A',
     images: [
-      'https://via.placeholder.com/150',
-      'https://via.placeholder.com/150/FF5733',
+      'https://github.com/user-attachments/assets/6b5ebbd5-cb07-45f6-a86f-8ef834dfa8b4',
+      'https://github.com/user-attachments/assets/3e7f3490-165c-44e4-84a9-ebeb2a90bba4',
+      'https://github.com/user-attachments/assets/823b3c10-b6c3-417c-9e9e-7ca7ae40074f',
     ],
     ratings: 4.5,
     totalRatings: 150,
@@ -21,7 +22,7 @@ List<Product> dummyProducts = [
     sizes: ['128GB', '256GB'],
     category: 'Electronics',
   ),
-  Product(
+  ProductModel(
     id: 'E002',
     name: 'Laptop Pro 15',
     regularPrice: 1299.99,
@@ -29,8 +30,9 @@ List<Product> dummyProducts = [
     status: 'Available',
     brand: 'Brand B',
     images: [
-      'https://via.placeholder.com/150',
-      'https://via.placeholder.com/150/FFC300',
+      'https://github.com/user-attachments/assets/1225a1e2-5cab-4d30-bd8b-a85a1b6ba11e',
+      'https://github.com/user-attachments/assets/3e2859e1-3a86-498c-be0c-463e4df97e8c',
+      'https://github.com/user-attachments/assets/4a1b6b49-167b-4011-b2e1-3696caa9201d',
     ],
     ratings: 4.7,
     totalRatings: 200,
@@ -39,7 +41,7 @@ List<Product> dummyProducts = [
     sizes: [],
     category: 'Electronics',
   ),
-  Product(
+  ProductModel(
     id: 'E003',
     name: 'Wireless Earbuds',
     regularPrice: 149.99,
@@ -47,8 +49,9 @@ List<Product> dummyProducts = [
     status: 'Available',
     brand: 'Brand C',
     images: [
-      'https://via.placeholder.com/150',
-      'https://via.placeholder.com/150/FF5733',
+      'https://github.com/user-attachments/assets/e89fe4b8-ce9d-4269-bf67-eeead8461708',
+      'https://github.com/user-attachments/assets/c218bd27-e17d-4ea8-9c4a-672183fb667a',
+      'https://github.com/user-attachments/assets/35a66f7e-3ef8-491c-a435-3f23dca89b69',
     ],
     ratings: 4.2,
     totalRatings: 80,
@@ -58,7 +61,7 @@ List<Product> dummyProducts = [
     sizes: [],
     category: 'Electronics',
   ),
-  Product(
+  ProductModel(
     id: 'E004',
     name: 'Smartwatch V2',
     regularPrice: 199.99,
@@ -75,7 +78,7 @@ List<Product> dummyProducts = [
     sizes: [],
     category: 'Electronics',
   ),
-  Product(
+  ProductModel(
     id: 'E005',
     name: 'Portable Bluetooth Speaker',
     regularPrice: 99.99,
@@ -95,7 +98,7 @@ List<Product> dummyProducts = [
   ),
 
 // Furniture
-  Product(
+  ProductModel(
     id: 'F001',
     name: 'Luxury Leather Sofa',
     regularPrice: 999.99,
@@ -114,7 +117,7 @@ List<Product> dummyProducts = [
     sizes: ['3-seater', '2-seater'],
     category: 'Furniture',
   ),
-  Product(
+  ProductModel(
     id: 'F002',
     name: 'Wooden Dining Table',
     regularPrice: 499.99,
@@ -132,7 +135,7 @@ List<Product> dummyProducts = [
     sizes: ['4 seats', '6 seats'],
     category: 'Furniture',
   ),
-  Product(
+  ProductModel(
     id: 'F003',
     name: 'Modern Bookshelf',
     regularPrice: 299.99,
@@ -150,7 +153,7 @@ List<Product> dummyProducts = [
     sizes: [],
     category: 'Furniture',
   ),
-  Product(
+  ProductModel(
     id: 'F004',
     name: 'Ergonomic Office Chair',
     regularPrice: 199.99,
@@ -167,7 +170,7 @@ List<Product> dummyProducts = [
     sizes: [],
     category: 'Furniture',
   ),
-  Product(
+  ProductModel(
     id: 'F005',
     name: 'Queen Bed Frame',
     regularPrice: 399.99,
@@ -186,7 +189,7 @@ List<Product> dummyProducts = [
   ),
 
 // Sports
-  Product(
+  ProductModel(
     id: 'S001',
     name: 'Fitness Tracker Watch',
     regularPrice: 199.99,
@@ -205,7 +208,7 @@ List<Product> dummyProducts = [
     sizes: [],
     category: 'Sports',
   ),
-  Product(
+  ProductModel(
     id: 'S002',
     name: 'Yoga Mat',
     regularPrice: 39.99,
@@ -222,7 +225,7 @@ List<Product> dummyProducts = [
     sizes: [],
     category: 'Sports',
   ),
-  Product(
+  ProductModel(
     id: 'S003',
     name: 'Running Shoes',
     regularPrice: 89.99,
@@ -239,7 +242,7 @@ List<Product> dummyProducts = [
     sizes: ['8', '9', '10', '11'],
     category: 'Sports',
   ),
-  Product(
+  ProductModel(
     id: 'S004',
     name: 'Boxing Gloves',
     regularPrice: 59.99,
@@ -256,7 +259,7 @@ List<Product> dummyProducts = [
     sizes: [],
     category: 'Sports',
   ),
-  Product(
+  ProductModel(
     id: 'S005',
     name: 'Bicycle Helmet',
     regularPrice: 49.99,
@@ -275,7 +278,7 @@ List<Product> dummyProducts = [
   ),
 
 // Clothes
-  Product(
+  ProductModel(
     id: 'C001',
     name: 'Casual T-Shirt',
     regularPrice: 29.99,
@@ -293,7 +296,7 @@ List<Product> dummyProducts = [
     sizes: ['S', 'M', 'L', 'XL'],
     category: 'Clothes',
   ),
-  Product(
+  ProductModel(
     id: 'C002',
     name: 'Classic Blue Jeans',
     regularPrice: 49.99,
@@ -310,7 +313,7 @@ List<Product> dummyProducts = [
     sizes: ['30', '32', '34', '36'],
     category: 'Clothes',
   ),
-  Product(
+  ProductModel(
     id: 'C003',
     name: 'Men’s Formal Shirt',
     regularPrice: 39.99,
@@ -327,7 +330,7 @@ List<Product> dummyProducts = [
     sizes: ['M', 'L', 'XL'],
     category: 'Clothes',
   ),
-  Product(
+  ProductModel(
     id: 'C004',
     name: 'Women\'s Summer Dress',
     regularPrice: 59.99,
@@ -344,7 +347,7 @@ List<Product> dummyProducts = [
     sizes: ['M', 'L'],
     category: 'Clothes',
   ),
-  Product(
+  ProductModel(
     id: 'C005',
     name: 'Winter Jacket',
     regularPrice: 89.99,
@@ -363,7 +366,7 @@ List<Product> dummyProducts = [
   ),
 
 // Cosmetics
-  Product(
+  ProductModel(
     id: 'COS001',
     name: 'Luxury Face Cream',
     regularPrice: 49.99,
@@ -380,7 +383,7 @@ List<Product> dummyProducts = [
     sizes: [],
     category: 'Cosmetics',
   ),
-  Product(
+  ProductModel(
     id: 'COS002',
     name: 'Makeup Brush Set',
     regularPrice: 39.99,
@@ -397,7 +400,7 @@ List<Product> dummyProducts = [
     sizes: [],
     category: 'Cosmetics',
   ),
-  Product(
+  ProductModel(
     id: 'COS003',
     name: 'Hydrating Lip Balm',
     regularPrice: 9.99,
@@ -414,7 +417,7 @@ List<Product> dummyProducts = [
     sizes: [],
     category: 'Cosmetics',
   ),
-  Product(
+  ProductModel(
     id: 'COS003',
     name: 'Hydrating Lip Balm',
     regularPrice: 9.99,
@@ -431,7 +434,7 @@ List<Product> dummyProducts = [
     sizes: [],
     category: 'Cosmetics',
   ),
-  Product(
+  ProductModel(
     id: 'COS003',
     name: 'Hydrating Lip Balm',
     regularPrice: 9.99,

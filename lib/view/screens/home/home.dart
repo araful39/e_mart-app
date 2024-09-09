@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:morder_ecommerce_app/controller/ui_controller/home_controller.dart';
+import 'package:morder_ecommerce_app/damy_data/damy_data.dart';
 import 'package:morder_ecommerce_app/utills/constants/colors.dart';
 import 'package:morder_ecommerce_app/utills/constants/image_strings.dart';
 import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
@@ -161,18 +162,32 @@ class HomeScreen extends StatelessWidget {
                     height: KSizes.sm,
                   ),
                   CustomGridLayout(
-                    itemCount: 5,
+                    itemCount: allProductList.length,
                     itemBuilder: (_, index) {
+                      var list = allProductList;
                       return GestureDetector(
                           onTap: () {
-                            Get.to(() => const ProductDetailScreen());
+                            Get.to(() => ProductDetailScreen(
+                                  productId: list[index].id,
+                                  productName: list[index].name,
+                                  regularPrice: list[index].regularPrice,
+                                  discountPrice: list[index].discountPrice,
+                                  status: list[index].status,
+                                  brandName: list[index].brand,
+                                  ratings: list[index].ratings,
+                                  totalRatings: list[index].totalRatings,
+                                  colors: list[index].colors,
+                                  sizes: list[index].sizes,
+                                  images: list[index].images,
+                                  description: list[index].description,
+                                ));
                           },
                           child: CustomProductCardVertical(
                             imagePath: AppImages.shoes3,
-                            discount: '25',
-                            productName: 'Green Nike Air Shoes',
-                            brandName: 'Nike',
-                            price: '300',
+                            discount: list[index].discountPrice.toString(),
+                            productName: list[index].name,
+                            brandName: list[index].brand,
+                            price: list[index].regularPrice.toString(),
                             addToCart: () {
                               EasyLoading.showSuccess(
                                 "Add To Cart",

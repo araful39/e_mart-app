@@ -1,27 +1,30 @@
-
 import 'package:flutter/material.dart';
 import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
+
 class CustomRatingAndShare extends StatelessWidget {
   const CustomRatingAndShare({
     super.key,
+    required this.ratings,
+    required this.totalRatings,
   });
-
+  final double ratings;
+  final int totalRatings;
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const Row(
+        Row(
           children: [
-            Icon(
+            const Icon(
               Icons.star,
               color: Colors.orangeAccent,
             ),
-            SizedBox(
+            const SizedBox(
               width: KSizes.sm,
             ),
-            Text("5.0"),
-            Text("(199)")
+            Text("$ratings"),
+            Text("($totalRatings)")
           ],
         ),
         IconButton(onPressed: () {}, icon: const Icon(Icons.share))

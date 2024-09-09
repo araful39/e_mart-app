@@ -11,7 +11,32 @@ import 'package:morder_ecommerce_app/view/screens/product_details/widget/product
 import 'package:morder_ecommerce_app/view/screens/product_review_and_rating/product_review_and_rating.dart';
 
 class ProductDetailScreen extends StatelessWidget {
-  const ProductDetailScreen({super.key});
+  const ProductDetailScreen(
+      {super.key,
+      required this.productId,
+      required this.productName,
+      required this.regularPrice,
+      required this.discountPrice,
+      required this.status,
+      required this.brandName,
+      required this.ratings,
+      required this.totalRatings,
+      required this.colors,
+      required this.sizes,
+      required this.images,
+      required this.description});
+  final String productId;
+  final String productName;
+  final double regularPrice;
+  final double discountPrice;
+  final String status;
+  final String brandName;
+  final double ratings;
+  final int totalRatings;
+  final List colors;
+  final List sizes;
+  final List images;
+  final String description;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +45,9 @@ class ProductDetailScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const CustomProductImageSlider(),
+            CustomProductImageSlider(
+              imageList: images,
+            ),
             Padding(
               padding: const EdgeInsets.only(
                   left: KSizes.defaultSpace,
@@ -28,9 +55,18 @@ class ProductDetailScreen extends StatelessWidget {
                   bottom: KSizes.defaultSpace),
               child: Column(
                 children: [
-                  const CustomRatingAndShare(),
-                  const CustomProductMetaData(),
-                  const CustomProductAttributes(),
+                  CustomRatingAndShare(
+                    ratings: ratings,
+                    totalRatings: totalRatings,
+                  ),
+                  CustomProductMetaData(
+                    discountPrice: discountPrice,
+                    regularPrice: regularPrice,
+                    productName: productName,
+                    status: status,
+                    brandName: brandName,
+                  ),
+                  // const CustomProductAttributes(),
                   const SizedBox(
                     height: KSizes.sm,
                   ),
@@ -41,7 +77,7 @@ class ProductDetailScreen extends StatelessWidget {
                   const SizedBox(
                     height: KSizes.sm,
                   ),
-                  const CustomSectionHeading(name: "Description"),
+                  CustomSectionHeading(name: description),
                   // const CustomReadMoreText(
                   //   "You can use shape property of the Chip widget. In that property you can pass RoundedRectangleBorder() and mention borderRadius inside of the RoundedRectangleBorder(). There are other ShapeBorders like BeveledRectangleBorder(), StadiumBorder(),OutlineInputBorder(),ContinuousRectangleBorder() and so on.You can use shape property of the Chip widget. In that property you   can pass RoundedRectangleBorder() and mention borderRadius inside of the RoundedRectangleBorder(). There are other ShapeBorders like BeveledRectangleBorder(), S    tadiumBorder(),OutlineInputBorder(),ContinuousRectangleBorder() and so on.",
                   //   trimLength: 100,

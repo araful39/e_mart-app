@@ -11,8 +11,9 @@ import 'package:morder_ecommerce_app/view/common/widgets/images/rounded_image.da
 class CustomProductImageSlider extends StatelessWidget {
   const CustomProductImageSlider({
     super.key,
+    required this.imageList,
   });
-
+  final List imageList;
   @override
   Widget build(BuildContext context) {
     ProductDetailController productDetailController =
@@ -29,8 +30,8 @@ class CustomProductImageSlider extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image(
-                        image:
-                            AssetImage(productDetailController.sliderImages()),
+                        image: NetworkImage(imageList[
+                            productDetailController.imageIndex.value]),
                         height: 180,
                       ),
                     ],
@@ -59,8 +60,7 @@ class CustomProductImageSlider extends StatelessWidget {
                             backgroundColor: AppColores.black,
                             border: Border.all(color: AppColores.white),
                             height: 50,
-                            imageUrl: productDetailController.imagesList[index]
-                                .toString(),
+                            imageUrl: imageList[index],
                             isNetworkImage: false),
                       );
                     },
@@ -69,7 +69,7 @@ class CustomProductImageSlider extends StatelessWidget {
                         width: KSizes.spaceBtwItems,
                       );
                     },
-                    itemCount: productDetailController.imagesList.length),
+                    itemCount: imageList.length),
               ),
             ],
           )),

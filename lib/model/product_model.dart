@@ -1,5 +1,5 @@
 // lib/product.dart
-class Product {
+class ProductModel {
   final String id;
   final String name;
   final double regularPrice;
@@ -14,7 +14,7 @@ class Product {
   final List<String> sizes;
   final String category;
 
-  Product({
+  ProductModel({
     required this.id,
     required this.name,
     required this.regularPrice,

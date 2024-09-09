@@ -61,7 +61,7 @@ class CustomProductCardVertical extends StatelessWidget {
                         horizontal: KSizes.sm, vertical: KSizes.xs),
                     child: Text(
                       "%$discount",
-                      style: TextStyle(color: AppColores.black),
+                      style: const TextStyle(color: AppColores.black),
                     ),
                   ),
                 ),
@@ -87,6 +87,7 @@ class CustomProductCardVertical extends StatelessWidget {
                 CustomProductTitleText(
                   title: productName,
                   smallSize: true,
+                  maxLine: 1,
                 ),
                 const SizedBox(
                   height: KSizes.spaceBtwItems / 2,

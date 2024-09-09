@@ -10,7 +10,18 @@ import 'package:morder_ecommerce_app/view/common/widgets/products/product_title_
 import 'package:morder_ecommerce_app/view/common/widgets/texts/brand_title_width_verified_icon.dart';
 
 class CustomProductMetaData extends StatelessWidget {
-  const CustomProductMetaData({super.key});
+  const CustomProductMetaData(
+      {super.key,
+      required this.discountPrice,
+      required this.regularPrice,
+      required this.productName,
+      required this.status,
+      required this.brandName});
+  final double discountPrice;
+  final double regularPrice;
+  final String productName;
+  final String status;
+  final String brandName;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +36,7 @@ class CustomProductMetaData extends StatelessWidget {
               padding: const EdgeInsets.symmetric(
                   horizontal: KSizes.sm, vertical: KSizes.xs),
               child: Text(
-                "25%",
+                "\$ $discountPrice %",
                 style: Theme.of(context)
                     .textTheme
                     .labelLarge
@@ -36,50 +47,50 @@ class CustomProductMetaData extends StatelessWidget {
               width: KSizes.spaceBtwItems,
             ),
             Text(
-              "\$250",
+              "\$ $regularPrice",
               style: Theme.of(context)
                   .textTheme
                   .titleSmall
                   ?.apply(decoration: TextDecoration.lineThrough),
             ),
-            const SizedBox(
-              width: KSizes.spaceBtwItems,
-            ),
-            const CustomProductPriceText(
-              price: "150",
-              isLarge: true,
-            )
+            // const SizedBox(
+            //   width: KSizes.spaceBtwItems,
+            // ),
+            // const CustomProductPriceText(
+            //   price: "150",
+            //   isLarge: true,
+            // )
           ],
         ),
         const SizedBox(
           height: KSizes.sm,
         ),
-        const CustomProductTitleText(title: "Green Nike Sports Shoes"),
+        CustomProductTitleText(title: productName),
         const SizedBox(
           height: KSizes.sm,
         ),
-        const Row(
+        Row(
           children: [
-            CustomProductTitleText(title: "Status"),
-            SizedBox(
+            const CustomProductTitleText(title: "Status"),
+            const SizedBox(
               width: KSizes.sm,
             ),
-            Text("in Stack"),
+            Text(status),
           ],
         ),
         const SizedBox(
           height: KSizes.sm,
         ),
-        const Row(
+        Row(
           children: [
-            CircularImage(
+            const CircularImage(
               imagePath: AppImages.shoesName,
               isNetworkImage: false,
               width: 40,
               height: 40,
             ),
             CustomBrandTitleWithVerifiedIcon(
-              title: "Nike",
+              title: brandName,
               brandTextSize: TextSizes.medium,
             ),
           ],
