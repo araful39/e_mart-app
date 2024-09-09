@@ -1,4 +1,4 @@
-import 'model.dart';
+import '../model/product_model.dart';
 
 List<Product> dummyProducts = [
 // Electronics
@@ -16,7 +16,7 @@ List<Product> dummyProducts = [
     ratings: 4.5,
     totalRatings: 150,
     description:
-    'The Smartphone X300 features a stunning display and powerful performance.',
+        'The Smartphone X300 features a stunning display and powerful performance.',
     colors: ['Red', 'Blue', 'Black'],
     sizes: ['128GB', '256GB'],
     category: 'Electronics',
@@ -53,7 +53,7 @@ List<Product> dummyProducts = [
     ratings: 4.2,
     totalRatings: 80,
     description:
-    'Noise-cancelling wireless earbuds with premium sound quality.',
+        'Noise-cancelling wireless earbuds with premium sound quality.',
     colors: ['Black', 'White'],
     sizes: [],
     category: 'Electronics',
@@ -88,7 +88,7 @@ List<Product> dummyProducts = [
     ratings: 4.5,
     totalRatings: 120,
     description:
-    'Enjoy high-quality sound on the go with this portable speaker.',
+        'Enjoy high-quality sound on the go with this portable speaker.',
     colors: ['Blue', 'Black'],
     sizes: [],
     category: 'Electronics',
@@ -109,7 +109,7 @@ List<Product> dummyProducts = [
     ratings: 4.7,
     totalRatings: 85,
     description:
-    'A comfortable and luxurious leather sofa for your living room.',
+        'A comfortable and luxurious leather sofa for your living room.',
     colors: ['Black', 'Brown'],
     sizes: ['3-seater', '2-seater'],
     category: 'Furniture',
@@ -200,7 +200,7 @@ List<Product> dummyProducts = [
     ratings: 4.2,
     totalRatings: 65,
     description:
-    'Monitor your fitness levels with this advanced fitness tracker.',
+        'Monitor your fitness levels with this advanced fitness tracker.',
     colors: ['Black', 'Blue'],
     sizes: [],
     category: 'Sports',

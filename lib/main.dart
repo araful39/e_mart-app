@@ -26,6 +26,6 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'e-Mart ',
         themeMode: ThemeMode.light,
-        home: SettingsScreen());
+        home: BottomNavigationBarScreen());
   }
 }
