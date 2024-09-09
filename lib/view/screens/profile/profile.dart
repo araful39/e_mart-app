@@ -1,4 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:morder_ecommerce_app/controller/ui_controller/profile_controller.dart';
+import 'package:morder_ecommerce_app/utills/constants/colors.dart';
 import 'package:morder_ecommerce_app/utills/constants/image_strings.dart';
 import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/appbar/appbar.dart';
@@ -11,6 +17,7 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ProfileController profileController = Get.put(ProfileController());
     return Scaffold(
       appBar: const CustomAppBar(
         title: Text("Profile"),
@@ -25,14 +32,46 @@ class Profile extends StatelessWidget {
                 width: double.infinity,
                 child: Column(
                   children: [
-                    const CustomCircularImageWithClipOval(
-                      height: 60,
-                      width: 60,
-                      isNetworkImage: false,
-                      imagePath: AppImages.profile,
-                    ),
+                    Obx(() {
+                      return profileController.selectedImage.isEmpty
+                          ? Text('No image selected.')
+                          : ClipRRect(
+                        borderRadius: BorderRadius.circular(100),
+                            child: Image.file(
+                                File(profileController.selectedImage.value),height: 150,width: 150,fit: BoxFit.cover,),
+                          );
+                    }),
                     TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          profileController.selectImage(ImageSource.gallery);
+                          // Get.bottomSheet(Container(
+                          //   height: 100,
+                          //   color: AppColores.white,
+                          //   child: Row(
+                          //     mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          //     crossAxisAlignment: CrossAxisAlignment.center,
+                          //     children: [
+                          //       IconButton(
+                          //           onPressed: () {
+                          //             profileController
+                          //                 .selectImage(ImageSource.camera);
+                          //           },
+                          //           icon: const Icon(
+                          //             Icons.camera_alt_outlined,
+                          //             size: 50,
+                          //             color: AppColores.primary,
+                          //           )),
+                          //       IconButton(
+                          //           onPressed: () {
+                          //             profileController
+                          //                 .selectImage(ImageSource.gallery);
+                          //           },
+                          //           icon: Icon(Icons.browse_gallery,
+                          //               size: 50, color: AppColores.primary)),
+                          //     ],
+                          //   ),
+                          // ));
+                        },
                         child: const Text("Change Profile Picture"))
                   ],
                 ),

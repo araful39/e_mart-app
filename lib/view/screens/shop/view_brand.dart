@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:morder_ecommerce_app/utills/constants/colors.dart';
 import 'package:morder_ecommerce_app/utills/constants/image_strings.dart';
 import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/appbar/appbar.dart';
@@ -15,30 +15,24 @@ class AllBrand extends StatelessWidget {
     return Scaffold(
       appBar: const CustomAppBar(
         showBackArrow: true,
-        title: Text("Brand"),
+        title: Text("Brands"),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 20,
+        ),
         child: SingleChildScrollView(
-          child: Column(
-            children: [
-              const CustomSectionHeading(name: "Brands"),
-              const SizedBox(
-                height: KSizes.md,
-              ),
-              CustomGridLayout(
-                  mainAxisExtent: 70,
-                  itemCount: 50,
-                  itemBuilder: (_, __) {
-                    return const CustomBrandCard(
-                        showBorder: true,
-                        brandImagePath: AppImages.shoesName,
-                        brandName: "Nike",
-                        productQuantity: 300,
-                        isNetworkImage: false);
-                  })
-            ],
-          ),
+          child: CustomGridLayout(
+              mainAxisExtent: 70,
+              itemCount: 50,
+              itemBuilder: (_, __) {
+                return const CustomBrandCard(
+                    showBorder: true,
+                    brandImagePath: AppImages.shoesName,
+                    brandName: "Nike",
+                    productQuantity: 300,
+                    isNetworkImage: false);
+              }),
         ),
       ),
     );

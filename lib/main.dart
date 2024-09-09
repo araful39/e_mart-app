@@ -5,6 +5,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:morder_ecommerce_app/view/bottom_navigation_menu.dart';
 import 'package:morder_ecommerce_app/view/screens/Wishlist/wishlist.dart';
 import 'package:morder_ecommerce_app/view/screens/home/home.dart';
+import 'package:morder_ecommerce_app/view/screens/settings/settings.dart';
 import 'package:morder_ecommerce_app/view/screens/shop/store.dart';
 
 void main() async {
@@ -25,6 +26,6 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'e-Mart ',
         themeMode: ThemeMode.light,
-        home: StoreScreen());
+        home: SettingsScreen());
   }
 }

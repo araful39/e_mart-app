@@ -6,6 +6,7 @@ import 'package:morder_ecommerce_app/utills/constants/colors.dart';
 import 'package:morder_ecommerce_app/utills/constants/image_strings.dart';
 import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/appbar/appbar.dart';
+import 'package:morder_ecommerce_app/view/common/widgets/custom_shapes/container/primary_header_container.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/icons/circular_icon.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/layout/grid_layout.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/products/product_cards/product_card_vertical.dart';
@@ -17,25 +18,29 @@ class FavouriteScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
-        title: const Text("WishList",
-            style: TextStyle(
-                color: AppColores.black, fontSize: KSizes.fontSizeXl)),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: KSizes.md),
-            child: CustomCircularIcon(
-              icon: CupertinoIcons.add,
-              onPress: () => Get.off(() => const HomeScreen()),
-            ),
-          )
-        ],
-      ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(KSizes.defaultSpace),
+      body: SafeArea(
+        child: SingleChildScrollView(
           child: Column(
             children: [
+              CustomPrimaryHeaderContainer(
+                  headerHeight: 100,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: KSizes.md, vertical: KSizes.md),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text("WishList",
+                            style: TextStyle(
+                                color: AppColores.white,
+                                fontSize: KSizes.fontSizeXl)),
+                        CustomCircularIcon(
+                          icon: CupertinoIcons.add,
+                          onPress: () => Get.off(() => const HomeScreen()),
+                        )
+                      ],
+                    ),
+                  )),
               CustomGridLayout(
                   itemCount: 6,
                   itemBuilder: (_, index) => CustomProductCardVertical(

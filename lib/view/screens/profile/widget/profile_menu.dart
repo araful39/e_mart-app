@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+
 class CustomProfileMenu extends StatelessWidget {
   const CustomProfileMenu({
-    super.key, required this.onTap, required this.title, required this.value, required this.iconData,
+    super.key,
+    required this.onTap,
+    required this.title,
+    required this.value,
+    required this.iconData,
   });
   final VoidCallback onTap;
   final String title;
@@ -17,12 +22,21 @@ class CustomProfileMenu extends StatelessWidget {
         children: [
           Flexible(
               flex: 2,
-              child: Text(title,style: Theme.of(context).textTheme.bodyMedium,)),
-
+              child: Text(
+                title,
+                style: Theme.of(context).textTheme.bodyMedium,
+              )),
           Flexible(
               flex: 5,
-              child: Text(value,style: Theme.of(context).textTheme.bodyLarge,)),
-          Flexible(child: Icon(iconData,size: 15,))
+              child: Text(
+                value,
+                style: Theme.of(context).textTheme.bodyLarge,
+              )),
+          Flexible(
+              child: Icon(
+            iconData,
+            size: 15,
+          ))
         ],
       ),
     );
