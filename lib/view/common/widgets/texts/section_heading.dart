@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:morder_ecommerce_app/utills/constants/colors.dart';
 import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
+import 'package:morder_ecommerce_app/utills/constants/texts.dart';
 
 class CustomSectionHeading extends StatelessWidget {
   const CustomSectionHeading({
@@ -23,9 +25,10 @@ class CustomSectionHeading extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          name,
+
+         name,
           style: TextStyle(
-              color: textColor ?? Colors.white,
+              color: textColor ?? AppColores.black,
               fontSize: KSizes.fontSizeLg,
               fontWeight: FontWeight.bold),
           maxLines: 1,
@@ -37,7 +40,7 @@ class CustomSectionHeading extends StatelessWidget {
               child: Text(
                 subText ?? "view ",
                 style: TextStyle(
-                    color: textColor ?? Colors.white,
+                    color: buttonColor ?? AppColores.black,
                     fontSize: KSizes.fontSizeLg),
               )),
       ],

@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:morder_ecommerce_app/controller/ui_controller/product_detail_controller.dart';
 import 'package:morder_ecommerce_app/utills/constants/colors.dart';
 import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
-import 'package:morder_ecommerce_app/view/common/widgets/appbar/appbar.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/custom_shapes/container/primary_header_container.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/icons/circular_icon.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/images/rounded_image.dart';
@@ -36,20 +35,33 @@ class CustomProductImageSlider extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const CustomAppBar(
-                    actions: [
-                      CustomCircularIcon(
-                        icon: Icons.favorite,
-                        color: AppColores.red,
-                      )
-                    ],
-                    showBackArrow: true,
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        top: KSizes.md, left: KSizes.md, right: KSizes.md),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        GestureDetector(
+                            onTap: () {
+                              Get.back();
+                            },
+                            child: Icon(
+                              Icons.arrow_back_outlined,
+                              size: 35,
+                            )),
+                        CustomCircularIcon(
+                          icon: Icons.favorite,
+                          color: AppColores.red,
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
               SizedBox(
                 height: 60,
                 child: ListView.separated(
+                    shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
                       return InkWell(
@@ -60,8 +72,9 @@ class CustomProductImageSlider extends StatelessWidget {
                             backgroundColor: AppColores.black,
                             border: Border.all(color: AppColores.white),
                             height: 50,
+                            width: 100,
                             imageUrl: imageList[index],
-                            isNetworkImage: false),
+                            isNetworkImage: true),
                       );
                     },
                     separatorBuilder: (_, __) {

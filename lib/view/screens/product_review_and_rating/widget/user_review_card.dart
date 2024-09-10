@@ -40,7 +40,7 @@ class CustomUserReviewCard extends StatelessWidget {
                   ),
                   Text(
                     name,
-                    style: Theme.of(context).textTheme.titleLarge,
+                    style: TextStyle(fontSize: KSizes.fontSizeXl)
                   )
                 ],
               ),
@@ -78,7 +78,7 @@ class CustomUserReviewCard extends StatelessWidget {
                child: Column(
 
                  children: [
-                   CustomSectionHeading(name: "T`s Store",subText: "07-March-2024",showActionButton: true,),
+                   CustomSectionHeading(name: "Raju`s Store",subText: "07-March-2024",showActionButton: true,),
 
                    ReadMoreText(
                      "This guide to review excellence will outline 12 examples of how brands successfully upped their review-game, making sure that positive, accurate feedback is the most visible. quickly touch on what great product review management can impact your brands success, then move on to our examples. Click through to the section you find most relevant. ",

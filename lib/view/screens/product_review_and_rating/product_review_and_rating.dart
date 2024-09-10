@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:morder_ecommerce_app/utills/constants/colors.dart';
 import 'package:morder_ecommerce_app/utills/constants/image_strings.dart';
 import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/appbar/appbar.dart';
@@ -33,7 +34,7 @@ class ProductReviewScreen extends StatelessWidget {
               ),
               Text(
                 "12,611",
-                style: Theme.of(context).textTheme.bodyMedium,
+                style: TextStyle(color: AppColores.black),
               ),
               const SizedBox(
                 height: KSizes.sm,

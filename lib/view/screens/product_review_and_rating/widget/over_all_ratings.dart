@@ -9,13 +9,13 @@ class CustomOverAllRatings extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       children: [
-        Text("4.8",style: Theme.of(context).textTheme.displayLarge,),
-        const SizedBox(
+        Text("4.8",style:TextStyle(fontSize: KSizes.fontSizeXl),),
+        SizedBox(
           width: KSizes.spaceBtwItems,
         ),
-          const Flexible(
+          Flexible(
           flex: 4,
           child: Column(
             children: [
