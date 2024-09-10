@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:morder_ecommerce_app/utills/constants/colors.dart';
 import 'package:morder_ecommerce_app/utills/constants/image_strings.dart';
@@ -10,9 +9,13 @@ class CustomBrandShowCase extends StatelessWidget {
   const CustomBrandShowCase({
     super.key,
     required this.images,
+    required this.category,
+    required this.productQuantity,
   });
 
   final List<String> images;
+  final String category;
+  final int productQuantity;
 
   @override
   Widget build(BuildContext context) {
@@ -23,11 +26,11 @@ class CustomBrandShowCase extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: KSizes.spaceBtwItems),
       child: Column(
         children: [
-          const CustomBrandCard(
+          CustomBrandCard(
             showBorder: false,
-            brandImagePath: AppImages.shoesName,
-            brandName: 'Panda',
-            productQuantity: 100,
+            brandImagePath: AppImages.a,
+            brandName: category,
+            productQuantity: productQuantity,
             isNetworkImage: false,
           ),
           Row(

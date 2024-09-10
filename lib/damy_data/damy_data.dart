@@ -36,7 +36,8 @@ List<ProductModel> allProductList = [
     ],
     ratings: 4.7,
     totalRatings: 200,
-    description: 'A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
+    description:
+        'A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
     colors: ['Red', 'Black'],
     sizes: [],
     category: 'Electronics',
@@ -75,7 +76,8 @@ List<ProductModel> allProductList = [
     ],
     ratings: 4.6,
     totalRatings: 150,
-    description: 'A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
+    description:
+        'A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
     colors: ['Black', 'Red'],
     sizes: [],
     category: 'Electronics',
@@ -110,9 +112,9 @@ List<ProductModel> allProductList = [
     status: 'Available',
     brand: 'HomeStyle',
     images: [
-      'https://github.com/user-attachments/assets/269ff83c-2f77-43f3-9596-86b82c3375e4',
       'https://github.com/user-attachments/assets/c9d062c2-8a4b-4241-a443-243f49654dff',
       'https://github.com/user-attachments/assets/5eeb5ed1-752f-4120-8053-7ccfaa6eb49b',
+      'https://github.com/user-attachments/assets/269ff83c-2f77-43f3-9596-86b82c3375e4',
     ],
     ratings: 4.7,
     totalRatings: 85,
@@ -136,7 +138,8 @@ List<ProductModel> allProductList = [
     ],
     ratings: 4.5,
     totalRatings: 95,
-    description: 'A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
+    description:
+        'A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
     colors: ['Red', 'Black'],
     sizes: ['4 seats', '6 seats'],
     category: 'Furniture',
@@ -155,7 +158,8 @@ List<ProductModel> allProductList = [
     ],
     ratings: 4.8,
     totalRatings: 75,
-    description: 'A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
+    description:
+        'A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
     colors: ['White', 'Black'],
     sizes: [],
     category: 'Furniture',
@@ -174,7 +178,8 @@ List<ProductModel> allProductList = [
     ],
     ratings: 4.2,
     totalRatings: 60,
-    description: 'A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
+    description:
+        'A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
     colors: ['Black', 'Red'],
     sizes: [],
     category: 'Furniture',
@@ -193,7 +198,8 @@ List<ProductModel> allProductList = [
     ],
     ratings: 4.6,
     totalRatings: 50,
-    description: 'A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
+    description:
+        'A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
     colors: ['Red', 'White'],
     sizes: [],
     category: 'Furniture',
@@ -208,7 +214,6 @@ List<ProductModel> allProductList = [
     status: 'Available',
     brand: 'FitBand',
     images: [
-      'https://via.placeholder.com/150',
       'https://github.com/user-attachments/assets/8195c318-2e96-45d5-9b3a-b9039b285994',
       'https://github.com/user-attachments/assets/54b18486-d52d-4b25-8be1-3613e9e1d035',
       'https://github.com/user-attachments/assets/6b385e84-8c98-44eb-8514-e3d8bd458535',
@@ -235,7 +240,8 @@ List<ProductModel> allProductList = [
     ],
     ratings: 4.0,
     totalRatings: 100,
-    description: 'High-quality yoga mat with excellent grip and comfort.A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
+    description:
+        'High-quality yoga mat with excellent grip and comfort.A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
     colors: ['Blue', 'Green'],
     sizes: [],
     category: 'Sports',
@@ -254,7 +260,8 @@ List<ProductModel> allProductList = [
     ],
     ratings: 4.6,
     totalRatings: 120,
-    description: 'Comfortable running shoes for all athletes.A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
+    description:
+        'Comfortable running shoes for all athletes.A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
     colors: ['Blue', 'Red'],
     sizes: ['8', '9', '10', '11'],
     category: 'Sports',
@@ -273,7 +280,8 @@ List<ProductModel> allProductList = [
     ],
     ratings: 4.4,
     totalRatings: 70,
-    description: 'Durable boxing gloves for training and matches.A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
+    description:
+        'Durable boxing gloves for training and matches.A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
     colors: ['Black', 'Red'],
     sizes: [],
     category: 'Sports',
@@ -292,7 +300,8 @@ List<ProductModel> allProductList = [
     ],
     ratings: 4.5,
     totalRatings: 60,
-    description: 'Protect your head with this comfortable bicycle helmet.A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
+    description:
+        'Protect your head with this comfortable bicycle helmet.A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
     colors: ['Yellow', 'Black'],
     sizes: [],
     category: 'Sports',
@@ -313,7 +322,8 @@ List<ProductModel> allProductList = [
     ],
     ratings: 4.0,
     totalRatings: 85,
-    description: 'A comfortable casual t-shirt made from soft cotton.A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
+    description:
+        'A comfortable casual t-shirt made from soft cotton.A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
     colors: ['Black', 'White', 'Blue'],
     sizes: ['S', 'M', 'L', 'XL'],
     category: 'Clothes',
@@ -332,7 +342,8 @@ List<ProductModel> allProductList = [
     ],
     ratings: 4.3,
     totalRatings: 75,
-    description: 'Classic blue jeans that never go out of style.A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
+    description:
+        'Classic blue jeans that never go out of style.A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
     colors: ['Blue', 'Black'],
     sizes: ['30', '32', '34', '36'],
     category: 'Clothes',
@@ -351,7 +362,8 @@ List<ProductModel> allProductList = [
     ],
     ratings: 4.5,
     totalRatings: 95,
-    description: 'A stylish formal shirt for special occasions.A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
+    description:
+        'A stylish formal shirt for special occasions.A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
     colors: ['White', 'Blue'],
     sizes: ['M', 'L', 'XL'],
     category: 'Clothes',
@@ -370,7 +382,8 @@ List<ProductModel> allProductList = [
     ],
     ratings: 4.6,
     totalRatings: 100,
-    description: 'A beautiful summer dress perfect for warm days.A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
+    description:
+        'A beautiful summer dress perfect for warm days.A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
     colors: ['Blue', 'Red'],
     sizes: ['M', 'L'],
     category: 'Clothes',
@@ -389,7 +402,8 @@ List<ProductModel> allProductList = [
     ],
     ratings: 4.8,
     totalRatings: 50,
-    description: 'Stay warm with our stylish winter jacket.A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
+    description:
+        'Stay warm with our stylish winter jacket.A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
     colors: ['Black', 'Red'],
     sizes: ['S', 'M', 'L', 'XL'],
     category: 'Clothes',
@@ -410,7 +424,8 @@ List<ProductModel> allProductList = [
     ],
     ratings: 4.8,
     totalRatings: 120,
-    description: 'A premium face cream for healthy and radiant skin.A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
+    description:
+        'A premium face cream for healthy and radiant skin.A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
     colors: [],
     sizes: [],
     category: 'Cosmetics',
@@ -429,7 +444,8 @@ List<ProductModel> allProductList = [
     ],
     ratings: 4.5,
     totalRatings: 110,
-    description: 'Professional makeup brush set for flawless makeup.A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
+    description:
+        'Professional makeup brush set for flawless makeup.A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
     colors: [],
     sizes: [],
     category: 'Cosmetics',
@@ -448,7 +464,8 @@ List<ProductModel> allProductList = [
     ],
     ratings: 4.3,
     totalRatings: 95,
-    description: 'Richly hydrating lip balm for soft lips.A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
+    description:
+        'Richly hydrating lip balm for soft lips.A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
     colors: [],
     sizes: [],
     category: 'Cosmetics',
@@ -461,11 +478,14 @@ List<ProductModel> allProductList = [
     status: 'Available',
     brand: 'LipCare',
     images: [
-      'https://via.placeholder.com/150',
+      'https://github.com/user-attachments/assets/80165e59-2acc-42e0-9461-119b65dc10bc',
+      'https://github.com/user-attachments/assets/0818dd03-38af-4e4b-a9a2-d7eb99345e7c',
+      'https://github.com/user-attachments/assets/f73a801f-9203-4233-aace-b76d47cb0917',
     ],
     ratings: 4.3,
     totalRatings: 95,
-    description: 'Richly hydrating lip balm for soft lips.A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
+    description:
+        'Richly hydrating lip balm for soft lips.A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
     colors: [],
     sizes: [],
     category: 'Cosmetics',
@@ -484,7 +504,8 @@ List<ProductModel> allProductList = [
     ],
     ratings: 4.3,
     totalRatings: 95,
-    description: 'Richly hydrating lip balm for soft lips.A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
+    description:
+        'Richly hydrating lip balm for soft lips.A mobile phone, or simply "mobile," is a portable communication device that allows users to make calls, send texts, and access the internet. Modern mobile phones, often referred to as smartphones, come equipped with a wide range of features such as: Mobiles have evolved to become essential tools for communication, entertainment, photography, and productivity.',
     colors: [],
     sizes: [],
     category: 'Cosmetics',

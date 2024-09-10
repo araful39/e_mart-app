@@ -1,4 +1,7 @@
 import 'package:get/get.dart';
+import 'package:morder_ecommerce_app/controller/ui_controller/wish_list_controller.dart';
+import 'package:morder_ecommerce_app/model/product_model.dart';
+import 'package:morder_ecommerce_app/utills/constants/colors.dart';
 
 class HomeController extends GetxController {
   final carousalCurrentIndex = 0.obs;
@@ -14,4 +17,10 @@ class HomeController extends GetxController {
     'https://github.com/user-attachments/assets/bc3f32b8-a6b9-48d5-9e1d-6b3e1c8fe3a4',
     'https://github.com/user-attachments/assets/b7fb2904-36f8-4b3a-9f89-646cea9db394',
   ].obs;
+
+  // favoriteColor(int index) {
+  //   if (a.wishList.contains(index)) {
+  //     return AppColores.red;
+  //   }
+  // }
 }

@@ -12,6 +12,7 @@ import 'package:morder_ecommerce_app/view/common/widgets/custom_shapes/container
 import 'package:morder_ecommerce_app/view/common/widgets/layout/grid_layout.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/products/cart_menu_icon.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/texts/section_heading.dart';
+import 'package:morder_ecommerce_app/view/screens/cart/cart.dart';
 import 'package:morder_ecommerce_app/view/screens/shop/view_brand.dart';
 import 'package:morder_ecommerce_app/view/screens/shop/widget/category_tab.dart';
 
@@ -29,7 +30,8 @@ class StoreScreen extends StatelessWidget {
               CustomPrimaryHeaderContainer(
                 headerHeight: 100,
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: KSizes.md,vertical: KSizes.md),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: KSizes.md, vertical: KSizes.md),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -41,7 +43,9 @@ class StoreScreen extends StatelessWidget {
                             color: AppColores.white),
                       ),
                       CustomCardCounterIcon(
-                        onpress: () {},
+                        onpress: () {
+                          Get.to(CartScreen());
+                        },
                         iconColor: AppColores.white,
                       ),
                     ],
@@ -58,7 +62,7 @@ class StoreScreen extends StatelessWidget {
                         scrolledUnderElevation: 0,
                         floating: true,
                         backgroundColor: AppColores.white,
-                        expandedHeight: 340,
+                        expandedHeight: 280,
                         flexibleSpace: Padding(
                           padding: const EdgeInsets.all(KSizes.sm),
                           child: ListView(
@@ -86,7 +90,7 @@ class StoreScreen extends StatelessWidget {
                                 height: KSizes.spaceBtwItems / 1.5,
                               ),
                               CustomGridLayout(
-                                  itemCount: 4,
+                                  itemCount: 2,
                                   mainAxisExtent: 65,
                                   itemBuilder: (context, index) {
                                     return GestureDetector(
@@ -105,9 +109,9 @@ class StoreScreen extends StatelessWidget {
                         ),
                         bottom: const CustomTapBar(
                           tabs: [
-                            Text("Sports"),
-                            Text("Furniture"),
                             Text("Electronics"),
+                            Text("Furniture"),
+                            Text("Sports"),
                             Text("Clothes"),
                             Text("Cosmetics"),
                           ],
@@ -118,35 +122,28 @@ class StoreScreen extends StatelessWidget {
                   body: const TabBarView(
                     children: [
                       CustomCategoryTap(
+                        images: [],
+                        category: 'Electronics',
+                      ),
+                      CustomCategoryTap(
+                        images: [],
+                        category: 'Furniture',
+                      ),
+                      CustomCategoryTap(
                         images: [
                           AppImages.shoes1,
                           AppImages.shoes2,
                           AppImages.shoes3
                         ],
-                        gridImage: [
-                          AppImages.shoes3,
-                          AppImages.shoes2,
-                          AppImages.shoes2,
-                          AppImages.shoes3,
-                          AppImages.shoes2,
-                          AppImages.shoes2,
-                        ],
+                        category: 'Sports',
+                      ),
+                      CustomCategoryTap(
+                        images: [AppImages.cloth],
+                        category: 'Clothes',
                       ),
                       CustomCategoryTap(
                         images: [],
-                        gridImage: [],
-                      ),
-                      CustomCategoryTap(
-                        images: [],
-                        gridImage: [],
-                      ),
-                      CustomCategoryTap(
-                        images: [],
-                        gridImage: [],
-                      ),
-                      CustomCategoryTap(
-                        images: [],
-                        gridImage: [],
+                        category: 'Cosmetics',
                       ),
                     ],
                   ),

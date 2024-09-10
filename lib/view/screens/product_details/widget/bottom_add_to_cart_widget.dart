@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:morder_ecommerce_app/controller/ui_controller/product_detail_controller.dart';
 import 'package:morder_ecommerce_app/utills/constants/colors.dart';
@@ -12,12 +12,11 @@ class CustomBottomAddToCart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller=Get.put(ProductDetailController());
+    final controller = Get.put(ProductDetailController());
     return Container(
       height: 100,
       padding: const EdgeInsets.symmetric(
-        horizontal: KSizes.sm,
-         vertical: KSizes.defaultSpace / 2),
+          horizontal: KSizes.sm, vertical: KSizes.defaultSpace / 2),
       decoration: const BoxDecoration(
           color: AppColores.light,
           borderRadius: BorderRadius.only(
@@ -28,11 +27,21 @@ class CustomBottomAddToCart extends StatelessWidget {
         children: [
           Flexible(
             flex: 3,
-            child: Obx(()=> CustomProductQuantityAddRemove(count: controller.productCount.value, onTapAdd: ()=>controller.increment(), onTapRemove: ()=>controller.decrement(),)),
+            child: Obx(() => CustomProductQuantityAddRemove(
+                  count: controller.productCount.value,
+                  onTapAdd: () => controller.increment(),
+                  onTapRemove: () => controller.decrement(),
+                )),
           ),
           Flexible(
               flex: 4,
-              child: CustomElevatedButton(name: "Add To Card", onPressed: (){},backgroundColor: AppColores.darkGery,))
+              child: CustomElevatedButton(
+                name: "Add To Card",
+                onPressed: () {
+                  EasyLoading.showSuccess("Add To Card");
+                },
+                backgroundColor: AppColores.primary,
+              ))
         ],
       ),
     );

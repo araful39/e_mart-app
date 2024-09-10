@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:morder_ecommerce_app/controller/ui_controller/cart_controller.dart';
+import 'package:morder_ecommerce_app/utills/constants/colors.dart';
 import 'package:morder_ecommerce_app/utills/constants/image_strings.dart';
 import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/appbar/appbar.dart';
+import 'package:morder_ecommerce_app/view/common/widgets/button/elevated_button.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/products/product-quntity_add_remove.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/products/product_price_text.dart';
 import 'package:morder_ecommerce_app/view/screens/cart/widget/cart_item.dart';
@@ -11,6 +15,7 @@ class CartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    CartController cartController = Get.put(CartController());
     return Scaffold(
       appBar: const CustomAppBar(
         showBackArrow: true,
@@ -18,14 +23,17 @@ class CartScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: ListView.separated(
-            itemBuilder: (context, _) => Column(
+        child: Obx(
+          () => ListView.separated(
+              itemBuilder: (context, _) {
+                var cartList = cartController.cartList[_];
+                return Column(
                   children: [
-                    const CustomCartItem(
-                      imagePath: AppImages.shoes5,
-                      isNetworkImage: false,
-                      brandTitle: "Nike",
-                      productTitle: "Black Sports Shoe",
+                    CustomCartItem(
+                      imagePath: cartList.images[0],
+                      isNetworkImage: true,
+                      brandTitle: cartList.brand,
+                      productTitle: cartList.name,
                     ),
                     const SizedBox(
                       height: KSizes.sm,
@@ -33,33 +41,43 @@ class CartScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Row(
-                          children: [
-                            const SizedBox(
-                              width: 90,
-                            ),
-                            CustomProductQuantityAddRemove(
-                              count: 1,
-                              onTapAdd: () {},
-                              onTapRemove: () {},
-                            ),
-                          ],
+                        CustomProductPriceText(
+                            price: cartList.discountPrice.toString()),
+                        CustomProductQuantityAddRemove(
+                          count: 1,
+                          onTapAdd: () {
+                            // Update the UI
+                          },
+                          onTapRemove: () {},
                         ),
-                        const CustomProductPriceText(price: "40.2")
+                        IconButton(
+                          icon: const Icon(
+                            Icons.delete,
+                            size: 40,
+                          ),
+                          onPressed: () {
+                            cartController.cartList.removeAt(_);
+                          },
+                        ),
                       ],
                     )
                   ],
-                ),
-            separatorBuilder: (_, __) => const SizedBox(
-                  height: KSizes.sm,
-                ),
-            itemCount: 10),
+                );
+              },
+              separatorBuilder: (_, __) => const SizedBox(
+                    height: KSizes.sm,
+                  ),
+              itemCount: cartController.cartList.length),
+        ),
       ),
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15),
-        child: ElevatedButton(
-          onPressed: () {},
-          child: const Text('Checkout \$400'),
+        padding: const EdgeInsets.only(right: 10, left: 10, bottom: 15),
+        child: Obx(
+          () => CustomElevatedButton(
+              backgroundColor: AppColores.primary,
+              name:
+                  'Total Price: \$${cartController.calculateTotalPrice().toStringAsFixed(2)}',
+              onPressed: () {}),
         ),
       ),
     );

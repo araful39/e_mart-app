@@ -7,6 +7,7 @@ import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/appbar/appbar.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/custom_shapes/container/primary_header_container.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/list_tile/settings_menu_tile.dart';
+import 'package:morder_ecommerce_app/view/screens/settings/widget/my_orders.dart';
 import 'package:morder_ecommerce_app/view/screens/settings/widget/user_profile_tile.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/texts/section_heading.dart';
 import 'package:morder_ecommerce_app/view/screens/address/address.dart';
@@ -74,7 +75,10 @@ class SettingsScreen extends StatelessWidget {
                       icon: Icons.person,
                       onTap: () => Get.to(() => const CartScreen()),
                     ),
-                    const CustomSettingsMenuTile(
+                     CustomSettingsMenuTile(
+                      onTap: (){
+                        Get.to(()=>MyOrders());
+                      },
                       title: 'My Orders',
                       subTitle: 'In-progress and Completed Orders',
                       icon: Icons.person,

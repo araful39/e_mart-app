@@ -21,7 +21,13 @@ class CustomProductCardVertical extends StatelessWidget {
     required this.discount,
     required this.productName,
     required this.brandName,
-    required this.price, required this.addToCart, required this.addToLove,
+    required this.price,
+    required this.addToCart,
+    this.addToLove,
+    required this.isNetworkImage,
+    this.favoriteColor,
+    this.favoriteButton = true,
+    this.addIcon,
   });
   final String imagePath;
   final String discount;
@@ -29,7 +35,11 @@ class CustomProductCardVertical extends StatelessWidget {
   final String brandName;
   final String price;
   final VoidCallback addToCart;
-  final VoidCallback addToLove;
+  final VoidCallback? addToLove;
+  final bool isNetworkImage;
+  final Color? favoriteColor;
+  final bool? favoriteButton;
+  final IconData? addIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +47,7 @@ class CustomProductCardVertical extends StatelessWidget {
       height: 180,
       padding: const EdgeInsets.all(1),
       decoration: BoxDecoration(
-          boxShadow: [TShadowStyle.verticalProductShadow],
+          boxShadow: [AppShadowStyle.verticalProductShadow],
           borderRadius: BorderRadius.circular(KSizes.productImageRadius),
           color: AppColores.white),
       child: Column(
@@ -50,7 +60,9 @@ class CustomProductCardVertical extends StatelessWidget {
                 Positioned(
                   bottom: 10,
                   child: CustomRoundedImage(
-                      imageUrl: imagePath, height: 100, isNetworkImage: false),
+                      imageUrl: imagePath,
+                      height: 100,
+                      isNetworkImage: isNetworkImage),
                 ),
                 Positioned(
                   top: 12,
@@ -60,7 +72,7 @@ class CustomProductCardVertical extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(
                         horizontal: KSizes.sm, vertical: KSizes.xs),
                     child: Text(
-                      "%$discount",
+                      "\$$discount %",
                       style: const TextStyle(color: AppColores.black),
                     ),
                   ),
@@ -68,11 +80,13 @@ class CustomProductCardVertical extends StatelessWidget {
                 Positioned(
                     right: 0,
                     top: 0,
-                    child: CustomCircularIcon(
-                      onPress: addToLove,
-                      icon: Icons.favorite,
-                      color: AppColores.error,
-                    ))
+                    child: favoriteButton == true
+                        ? CustomCircularIcon(
+                            onPress: addToLove,
+                            icon: Icons.favorite,
+                            color: favoriteColor,
+                          )
+                        : const SizedBox())
               ],
             ),
           ),
@@ -102,7 +116,7 @@ class CustomProductCardVertical extends StatelessWidget {
                         price: price,
                       ),
                       InkWell(
-                        onTap:addToCart,
+                        onTap: addToCart,
                         child: Container(
                           decoration: const BoxDecoration(
                               color: AppColores.dark,
@@ -110,12 +124,12 @@ class CustomProductCardVertical extends StatelessWidget {
                                   topLeft: Radius.circular(KSizes.cardRadiusMd),
                                   bottomRight: Radius.circular(
                                       KSizes.productImageRadius))),
-                          child: const SizedBox(
+                          child: SizedBox(
                               height: KSizes.iconLg * 1.2,
                               width: KSizes.iconLg * 1.2,
                               child: Center(
                                   child: Icon(
-                                Icons.add,
+                                addIcon ?? Icons.add,
                                 color: AppColores.white,
                               ))),
                         ),

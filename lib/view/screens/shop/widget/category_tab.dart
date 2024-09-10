@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:get/get.dart';
+import 'package:morder_ecommerce_app/controller/ui_controller/cart_controller.dart';
+import 'package:morder_ecommerce_app/controller/ui_controller/wish_list_controller.dart';
+import 'package:morder_ecommerce_app/damy_data/damy_data.dart';
 import 'package:morder_ecommerce_app/utills/constants/colors.dart';
-import 'package:morder_ecommerce_app/utills/constants/image_strings.dart';
 import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/brand/brand_show_case.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/layout/grid_layout.dart';
@@ -12,13 +14,18 @@ class CustomCategoryTap extends StatelessWidget {
   const CustomCategoryTap({
     super.key,
     required this.images,
-    required this.gridImage,
+    required this.category,
   });
+  final String category;
   final List<String> images;
-  final List<String> gridImage;
 
   @override
   Widget build(BuildContext context) {
+    var wishListController = Get.put(WishListController());
+    var cartListController = Get.put(CartController());
+    final products = allProductList
+        .where((product) => product.category == category)
+        .toList();
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.all(KSizes.defaultSpace),
@@ -26,6 +33,8 @@ class CustomCategoryTap extends StatelessWidget {
           children: [
             CustomBrandShowCase(
               images: images,
+              category: category,
+              productQuantity: 250,
             ),
             CustomSectionHeading(
               textColor: AppColores.primary,
@@ -37,20 +46,25 @@ class CustomCategoryTap extends StatelessWidget {
               height: KSizes.spaceBtwItems,
             ),
             CustomGridLayout(
-                itemCount: gridImage.length,
+                itemCount: products.length,
                 itemBuilder: (_, index) {
+                  var product = products[index];
+                  bool isInWishList = wishListController.wishList
+                      .any((item) => item.id == product.id);
                   return CustomProductCardVertical(
-                    imagePath: AppImages.shoes3,
-                    discount: '25',
-                    productName: 'Green Nike Air Shoes',
-                    brandName: 'Nike',
-                    price: '300',
-                      addToCart: () {
-                        EasyLoading.showSuccess("Add To Cart");
-                      },
-                      addToLove: () {
-                        EasyLoading.showSuccess("Add To Favorite");
-                      },
+                    imagePath: product.images[0],
+                    discount: product.discountPrice.toString(),
+                    productName: product.name,
+                    brandName: product.brand,
+                    price: product.regularPrice.toString(),
+                    addToCart: () {
+                      cartListController.addToCartList(product);
+                    },
+                    addToLove: () {
+                      wishListController.addToWishList(product);
+                    },
+                    isNetworkImage: true,
+                    favoriteColor: isInWishList ? Colors.red : Colors.grey,
                   );
                 })
           ],

@@ -23,7 +23,7 @@ class CustomProductQuantityAddRemove extends StatelessWidget {
           child: const CustomRoundedContainer(
             height: 35,
             width: 35,
-            backgroundColor: AppColores.buttonPrimary,
+            backgroundColor: AppColores.primary,
             child: Icon(
               Icons.remove,
               color: Colors.white,
@@ -48,7 +48,7 @@ class CustomProductQuantityAddRemove extends StatelessWidget {
           child: const CustomRoundedContainer(
             height: 35,
             width: 35,
-            backgroundColor: AppColores.buttonPrimary,
+            backgroundColor: AppColores.primary,
             child: Icon(
               Icons.add,
               color: Colors.white,

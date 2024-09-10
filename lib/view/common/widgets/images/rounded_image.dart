@@ -44,7 +44,8 @@ required this.isNetworkImage,
         ),
         child: ClipRRect(
             borderRadius: BorderRadius.circular(imageRadius ?? KSizes.md),
-            child: Image(
+            child:
+            Image(
               image: isNetworkImage
                   ? NetworkImage(imageUrl)
                   : AssetImage(imageUrl) as ImageProvider,

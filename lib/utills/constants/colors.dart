@@ -25,9 +25,9 @@ class AppColores {
   static const Color lightContainer = Color(0xFFF6F6F6);
   static Color darkContainer = Colors.white.withOpacity(0.1);
 
-  static const Color buttonPrimary = Color(0xFF4b68ff);
-  static const Color buttonSecondary = Color(0xFF6C757D);
-  static const Color buttonDisabled = Color(0xFFC4C4C4);
+  // static const Color buttonPrimary = Color(0xFF4b68ff);
+  // static const Color buttonSecondary = Color(0xFF6C757D);
+  // static const Color buttonDisabled = Color(0xFFC4C4C4);
 
   static const Color error = Color(0xFFD32F2F);
   static const Color success = Color(0xFF388E3C);

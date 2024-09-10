@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:morder_ecommerce_app/controller/ui_controller/product_detail_controller.dart';
+import 'package:morder_ecommerce_app/controller/ui_controller/wish_list_controller.dart';
 import 'package:morder_ecommerce_app/utills/constants/colors.dart';
 import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/custom_shapes/container/primary_header_container.dart';
@@ -17,10 +18,11 @@ class CustomProductImageSlider extends StatelessWidget {
   Widget build(BuildContext context) {
     ProductDetailController productDetailController =
         Get.put(ProductDetailController());
+    var wishListController = Get.put(WishListController());
     return Obx(
       () => CustomPrimaryHeaderContainer(
           isCircular: false,
-          color: AppColores.black.withOpacity(0.5),
+          color: AppColores.white,
           child: Column(
             children: [
               Stack(
@@ -39,20 +41,17 @@ class CustomProductImageSlider extends StatelessWidget {
                     padding: const EdgeInsets.only(
                         top: KSizes.md, left: KSizes.md, right: KSizes.md),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         GestureDetector(
                             onTap: () {
                               Get.back();
                             },
-                            child: Icon(
+                            child: const Icon(
                               Icons.arrow_back_outlined,
                               size: 35,
                             )),
-                        CustomCircularIcon(
-                          icon: Icons.favorite,
-                          color: AppColores.red,
-                        ),
+
                       ],
                     ),
                   ),

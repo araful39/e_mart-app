@@ -2,7 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:morder_ecommerce_app/utills/constants/colors.dart';
 
-class TShadowStyle{
+class AppShadowStyle{
   static final verticalProductShadow=BoxShadow(
     color:AppColores. white.withOpacity(0.1),
     blurRadius: 50,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:morder_ecommerce_app/damy_data/brand_list.dart';
 import 'package:morder_ecommerce_app/utills/constants/colors.dart';
 import 'package:morder_ecommerce_app/utills/constants/image_strings.dart';
 import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
@@ -24,13 +25,13 @@ class AllBrand extends StatelessWidget {
         child: SingleChildScrollView(
           child: CustomGridLayout(
               mainAxisExtent: 70,
-              itemCount: 50,
+              itemCount: brands.length,
               itemBuilder: (_, __) {
-                return const CustomBrandCard(
+                return CustomBrandCard(
                     showBorder: true,
                     brandImagePath: AppImages.shoesName,
-                    brandName: "Nike",
-                    productQuantity: 300,
+                    brandName: brands[__].brandName,
+                    productQuantity: brands[__].products,
                     isNetworkImage: false);
               }),
         ),
