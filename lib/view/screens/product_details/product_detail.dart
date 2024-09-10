@@ -35,8 +35,8 @@ class ProductDetailScreen extends StatelessWidget {
   final String brandName;
   final double ratings;
   final int totalRatings;
-  final List colors;
-  final List sizes;
+  final List<String> colors;
+  final List<String> sizes;
   final List images;
   final String description;
 
@@ -69,7 +69,10 @@ class ProductDetailScreen extends StatelessWidget {
                       status: status,
                       brandName: brandName,
                     ),
-                    // const CustomProductAttributes(),
+                    CustomProductAttributes(
+                      sizes: sizes,
+                      colors: colors,
+                    ),
                     const SizedBox(
                       height: KSizes.sm,
                     ),
