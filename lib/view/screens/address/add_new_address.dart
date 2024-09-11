@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/appbar/appbar.dart';
@@ -64,7 +65,10 @@ class CustomAddNewAddress extends StatelessWidget {
               ],
             ),
             const CustomTextFormField(labelName: "Country",iconData: Icons.blur_circular,),
-            CustomElevatedButton(name: "Save", onPressed: ()=> Get.back())
+            CustomElevatedButton(name: "Save", onPressed: (){
+              EasyLoading.showSuccess("Save");
+             Get.back();
+            })
 
           ],
         ),

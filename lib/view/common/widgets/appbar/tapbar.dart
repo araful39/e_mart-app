@@ -10,13 +10,16 @@ final List<Widget> tabs;
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: TabBar(
-        indicatorWeight: 2,
-        tabs: tabs,
-        isScrollable: true,
-        indicatorColor: AppColores.primary,
-        labelColor: AppColores.primary,
-        unselectedLabelColor: AppColores.darkGery,
+      child: Container(
+        height: 50,
+        child: TabBar(
+          indicatorWeight: 2,
+          tabs: tabs,
+          isScrollable: true,
+          indicatorColor: AppColores.primary,
+          labelColor: AppColores.primary,
+          unselectedLabelColor: AppColores.darkGery,
+        ),
       ),
     ); // Your custom widget implementation.
   }

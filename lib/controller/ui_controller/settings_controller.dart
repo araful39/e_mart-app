@@ -5,6 +5,9 @@ class SettingsController extends GetxController{
   final FlutterSecureStorage storage = const FlutterSecureStorage();
   RxBool isClick=false.obs;
   RxString selectedImage = ''.obs;
+  RxBool dataSharing = false.obs;
+  RxBool profileVisibility = true.obs;
+  RxBool notifications = true.obs;
   onChangeSafeMode(value){
     isClick.value=value;
   }

@@ -7,7 +7,13 @@ import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/appbar/appbar.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/custom_shapes/container/primary_header_container.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/list_tile/settings_menu_tile.dart';
+import 'package:morder_ecommerce_app/view/screens/settings/widget/account_privacy.dart';
+import 'package:morder_ecommerce_app/view/screens/settings/widget/my_coupons.dart';
+import 'package:morder_ecommerce_app/view/screens/settings/widget/my_order.dart';
 import 'package:morder_ecommerce_app/view/screens/settings/widget/my_orders.dart';
+import 'package:morder_ecommerce_app/view/screens/settings/widget/notification.dart';
+import 'package:morder_ecommerce_app/view/screens/settings/widget/privacy_policy.dart';
+import 'package:morder_ecommerce_app/view/screens/settings/widget/terms_and_conditions.dart';
 import 'package:morder_ecommerce_app/view/screens/settings/widget/user_profile_tile.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/texts/section_heading.dart';
 import 'package:morder_ecommerce_app/view/screens/address/address.dart';
@@ -29,17 +35,17 @@ class SettingsScreen extends StatelessWidget {
               CustomPrimaryHeaderContainer(
                 headerHeight: 200,
                 child: Column(children: [
-                  SizedBox(
+                  const SizedBox(
                     height: KSizes.md,
                   ),
-                  Text(
+                  const Text(
                     "Account",
                     style: TextStyle(
                         color: AppColores.white,
                         fontSize: KSizes.fontSizeXl,
                         fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: KSizes.md,
                   ),
                   Obx(
@@ -75,32 +81,52 @@ class SettingsScreen extends StatelessWidget {
                       icon: Icons.person,
                       onTap: () => Get.to(() => const CartScreen()),
                     ),
-                     CustomSettingsMenuTile(
-                      onTap: (){
-                        Get.to(()=>MyOrders());
+                    CustomSettingsMenuTile(
+                      onTap: () {
+                        Get.to(() => MyOrdersScreen());
                       },
                       title: 'My Orders',
                       subTitle: 'In-progress and Completed Orders',
                       icon: Icons.person,
                     ),
-                    const CustomSettingsMenuTile(
-                      title: 'Bank Account',
-                      subTitle: 'Withdraw balance to registered bank ',
-                      icon: Icons.person,
-                    ),
-                    const CustomSettingsMenuTile(
+                    CustomSettingsMenuTile(
+                      onTap: () {
+                        Get.to(() => MyCouponsScreen());
+                      },
                       title: 'My Coupons',
                       subTitle: 'List of all the discounted coupons',
                       icon: Icons.person,
                     ),
-                    const CustomSettingsMenuTile(
+                    CustomSettingsMenuTile(
+                      onTap: () {
+                        Get.to(() => const NotificationScreen());
+                      },
                       title: 'Notifications',
                       subTitle: 'Set any kind of notification message',
                       icon: Icons.person,
                     ),
-                    const CustomSettingsMenuTile(
+                    CustomSettingsMenuTile(
+                      onTap: () {
+                        Get.to(() => const PrivacyScreen());
+                      },
                       title: 'Account Privacy',
                       subTitle: 'Manage data use and connect',
+                      icon: Icons.person,
+                    ),
+                    CustomSettingsMenuTile(
+                      onTap: () {
+                        Get.to(() => const PrivacyPolicyScreen());
+                      },
+                      title: 'Privacy Policy',
+                      subTitle: 'View our privacy policy. ',
+                      icon: Icons.person,
+                    ),
+                    CustomSettingsMenuTile(
+                      onTap: () {
+                        Get.to(() => const TermsAndConditionsScreen());
+                      },
+                      title: 'Terms and Conditions',
+                      subTitle: 'View our terms and conditions. ',
                       icon: Icons.person,
                     ),
                     const SizedBox(
@@ -110,11 +136,7 @@ class SettingsScreen extends StatelessWidget {
                     const SizedBox(
                       height: KSizes.spaceBtwItems,
                     ),
-                    const CustomSettingsMenuTile(
-                      title: 'Load Data',
-                      subTitle: 'Get shopping delivery address',
-                      icon: Icons.upload,
-                    ),
+
                     CustomSettingsMenuTile(
                       title: 'Location',
                       subTitle: 'Set recommendation',

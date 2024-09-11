@@ -34,8 +34,9 @@ class CustomUserAddress extends StatelessWidget {
                 CustomSectionHeading(name: name),
                 showIcon
                     ? const Icon(
-                        Icons.check_circle_outline,
-                        color: Colors.indigo,
+                        Icons.check_circle,
+                        size: 40,
+                        color: AppColores.primary,
                       )
                     : const SizedBox()
               ],

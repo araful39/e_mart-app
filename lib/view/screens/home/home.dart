@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:morder_ecommerce_app/controller/ui_controller/cart_controller.dart';
 import 'package:morder_ecommerce_app/controller/ui_controller/home_controller.dart';
 import 'package:morder_ecommerce_app/controller/ui_controller/wish_list_controller.dart';
+import 'package:morder_ecommerce_app/damy_data/category_list.dart';
 import 'package:morder_ecommerce_app/damy_data/damy_data.dart';
 import 'package:morder_ecommerce_app/utills/constants/colors.dart';
 import 'package:morder_ecommerce_app/utills/constants/image_strings.dart';
@@ -28,8 +29,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     HomeController homeController = Get.put(HomeController());
-    var wishListController = Get.put(WishListController());
-    var cartListController = Get.put(CartController());
+
     return Scaffold(
         body: SafeArea(
       child: SingleChildScrollView(
@@ -77,15 +77,15 @@ class HomeScreen extends StatelessWidget {
                       onpress: () {},
                     ),
                     const SizedBox(
-                      height: KSizes.sm,
+                      height: KSizes.md,
                     ),
                     CustomSectionHeading(
-                      showActionButton: true,
+                      showActionButton: false,
                       name: "Category",
-                      subText: "view all",
+
                       textColor: AppColores.white,
-                      buttonColor: AppColores.white,
-                      onpress: () {},
+
+
                     ),
                     const SizedBox(
                       height: KSizes.sm,
@@ -94,13 +94,12 @@ class HomeScreen extends StatelessWidget {
                       height: 85,
                       child: ListView.builder(
                           shrinkWrap: true,
-                          itemCount: 15,
+                          itemCount: categories.length,
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (_, index) {
-                            return const CustomVerticalImageText(
-                              text: "Product ",
-                              netImagePath:
-                                  "https://github.com/user-attachments/assets/5beac86f-2092-4e63-8af3-fc354584e362",
+                            return  CustomVerticalImageText(
+                              text:categories[index].name,
+                              netImagePath:categories[index].imageUrl,
                             );
                           }),
                     )
@@ -190,7 +189,8 @@ class HomeScreen extends StatelessWidget {
                         },
                         child: Obx(
                           () {
-                            bool isInWishList = wishListController.wishList
+                            bool isInWishList = homeController
+                                .wishListController.wishList
                                 .any((item) => item.id == product.id);
 
                             return CustomProductCardVertical(
@@ -199,12 +199,11 @@ class HomeScreen extends StatelessWidget {
                               productName: product.name,
                               brandName: product.brand,
                               price: product.regularPrice.toString(),
-
-                              addToCart: () {
-                                cartListController.addToCartList(product);
+                              addToCart: () async {
+                                await homeController.addToCart(product);
                               },
-                              addToLove: () {
-                                wishListController.addToWishList(product);
+                              addToLove: () async {
+                                await homeController.addToWishList(product);
                               },
                               isNetworkImage: true,
                               favoriteColor:

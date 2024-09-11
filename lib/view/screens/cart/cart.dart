@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:morder_ecommerce_app/controller/ui_controller/cart_controller.dart';
+import 'package:morder_ecommerce_app/controller/ui_controller/payment_controller.dart';
 import 'package:morder_ecommerce_app/utills/constants/colors.dart';
-import 'package:morder_ecommerce_app/utills/constants/image_strings.dart';
 import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/appbar/appbar.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/button/elevated_button.dart';
@@ -16,6 +16,7 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     CartController cartController = Get.put(CartController());
+    PaymentController paymentController = Get.put(PaymentController());
     return Scaffold(
       appBar: const CustomAppBar(
         showBackArrow: true,
@@ -77,7 +78,10 @@ class CartScreen extends StatelessWidget {
               backgroundColor: AppColores.primary,
               name:
                   'Total Price: \$${cartController.calculateTotalPrice().toStringAsFixed(2)}',
-              onPressed: () {}),
+              onPressed: () async {
+                await paymentController.sslCommerzCustomizedCall(
+                    amount: cartController.calculateTotalPrice());
+              }),
         ),
       ),
     );
