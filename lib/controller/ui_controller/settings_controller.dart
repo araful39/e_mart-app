@@ -1,28 +1,31 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
 
-class SettingsController extends GetxController{
+class SettingsController extends GetxController {
   final FlutterSecureStorage storage = const FlutterSecureStorage();
-  RxBool isClick=false.obs;
+  RxBool isLocation = false.obs;
+  RxBool isSafaMode = false.obs;
   RxString selectedImage = ''.obs;
   RxBool dataSharing = false.obs;
   RxBool profileVisibility = true.obs;
   RxBool notifications = true.obs;
-  onChangeSafeMode(value){
-    isClick.value=value;
-  }
+  // onChangeLocation(value){
+  //   isSafaMode.value=value;
+  // }
+  // onChangeSafeMode(value){
+  //   isSafaMode.value=value;
+  // }
 
-  getImage()async{
+  getImage() async {
     String? storedImage = await storage.read(key: "pickedImage");
     if (storedImage != null) {
       selectedImage.value = storedImage;
     }
   }
- @override
+
+  @override
   void onInit() {
-   getImage();
+    getImage();
     super.onInit();
   }
-
 }
-

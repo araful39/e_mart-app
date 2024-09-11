@@ -136,14 +136,17 @@ class SettingsScreen extends StatelessWidget {
                     const SizedBox(
                       height: KSizes.spaceBtwItems,
                     ),
-
                     CustomSettingsMenuTile(
                       title: 'Location',
                       subTitle: 'Set recommendation',
                       icon: Icons.location_on_outlined,
-                      trailing: Switch(
-                        value: true,
-                        onChanged: (value) {},
+                      trailing: Obx(
+                            () => Switch(
+                          value: settingsController.isLocation.value,
+                          onChanged: (values) {
+                            settingsController.isLocation.value=values;
+                          },
+                        ),
                       ),
                     ),
                     CustomSettingsMenuTile(
@@ -152,18 +155,14 @@ class SettingsScreen extends StatelessWidget {
                       icon: Icons.safety_check,
                       trailing: Obx(
                         () => Switch(
-                          value: settingsController.isClick.value,
+                          value: settingsController.isSafaMode.value,
                           onChanged: (value) {
-                            settingsController.onChangeSafeMode(value);
+                            settingsController.isSafaMode.value=  value;
                           },
                         ),
                       ),
                     ),
-                    const CustomSettingsMenuTile(
-                      title: 'HD Image Quality',
-                      subTitle: 'Set image quality to be seen',
-                      icon: Icons.image,
-                    ),
+
                     const SizedBox(
                       height: KSizes.defaultBtwSections,
                     ),
