@@ -1,11 +1,13 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
+import 'package:morder_ecommerce_app/utills/constants/colors.dart';
 import 'package:morder_ecommerce_app/utills/constants/image_strings.dart';
 import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
 import 'package:morder_ecommerce_app/utills/constants/texts.dart';
-import 'package:morder_ecommerce_app/view/screens/signin/signin.dart';
+import 'package:morder_ecommerce_app/view/common/widgets/elevated_button.dart';
+import 'package:morder_ecommerce_app/view/screens/otp/otp.dart';
 
 class ResetPassword extends StatelessWidget {
   const ResetPassword({super.key});
@@ -48,22 +50,22 @@ class ResetPassword extends StatelessWidget {
               const SizedBox(
                 height: KSizes.defaultBtwSections,
               ),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () => Get.to(() => const SignInScreen()),
-                  child: const Text(AppTexts.done),
-                ),
-              ),
+              CustomElevatedButton(
+                  backgroundColor: AppColores.primary,
+                  name: AppTexts.done,
+                  onPressed: () async {
+                    EasyLoading.show();
+                    await Future.delayed(const Duration(seconds: 2));
+                    Get.off(() => const OTPScreen());
+                    EasyLoading.dismiss();
+                  }),
               const SizedBox(
                 height: KSizes.spaceBtwItems,
               ),
               SizedBox(
                 width: double.infinity,
                 child: OutlinedButton(
-                  onPressed: () {
-
-                  },
+                  onPressed: () {},
                   child: const Text(AppTexts.resentEmail),
                 ),
               ),

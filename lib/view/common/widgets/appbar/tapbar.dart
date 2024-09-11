@@ -10,7 +10,7 @@ final List<Widget> tabs;
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: Container(
+      child: SizedBox(
         height: 50,
         child: TabBar(
           indicatorWeight: 2,

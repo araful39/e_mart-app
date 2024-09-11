@@ -2,9 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:morder_ecommerce_app/controller/ui_controller/verify_controller.dart';
+import 'package:morder_ecommerce_app/utills/constants/colors.dart';
 import 'package:morder_ecommerce_app/utills/constants/image_strings.dart';
 import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
 import 'package:morder_ecommerce_app/utills/constants/texts.dart';
+import 'package:morder_ecommerce_app/view/common/widgets/elevated_button.dart';
+import 'package:morder_ecommerce_app/view/screens/otp/otp.dart';
 import 'package:morder_ecommerce_app/view/screens/signin/signin.dart';
 
 class VerifyEmailScreen extends StatelessWidget {
@@ -17,9 +20,12 @@ class VerifyEmailScreen extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         actions: [
-          IconButton(
-              onPressed: () => Get.offAll(() => const SignInScreen()),
-              icon: const Icon(CupertinoIcons.clear))
+          Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: IconButton(
+                onPressed: () => Get.offAll(() => const SignInScreen()),
+                icon: const Icon(CupertinoIcons.clear,color: AppColores.primary,)),
+          )
         ],
       ),
       body: SingleChildScrollView(
@@ -57,22 +63,18 @@ class VerifyEmailScreen extends StatelessWidget {
               const SizedBox(
                 height: KSizes.defaultBtwSections,
               ),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: const Text(AppTexts.rContinue),
-                ),
+              CustomElevatedButton(
+                name: AppTexts.rContinue,
+                onPressed: () {
+                  Get.to(()=>OTPScreen());
+                },
               ),
               const SizedBox(
                 height: KSizes.spaceBtwItems,
               ),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: const Text(AppTexts.resentEmail),
-                ),
+              CustomElevatedButton(
+                name: AppTexts.resentEmail,
+                onPressed: () {},
               ),
             ],
           ),

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField({super.key, this.iconData, required this.labelName});
+  const CustomTextFormField({super.key, this.iconData, required this.labelName, required this.controller});
 final IconData? iconData;
 final String labelName;
+final TextEditingController controller;
+
   @override
   Widget build(BuildContext context) {
     return Padding(

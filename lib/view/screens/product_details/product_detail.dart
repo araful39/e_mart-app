@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:morder_ecommerce_app/utills/constants/colors.dart';
 import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
-import 'package:morder_ecommerce_app/view/common/widgets/button/elevated_button.dart';
+import 'package:morder_ecommerce_app/view/common/widgets/elevated_button.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/texts/r_text_description.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/texts/section_heading.dart';
 import 'package:morder_ecommerce_app/view/screens/product_details/widget/bottom_add_to_cart_widget.dart';

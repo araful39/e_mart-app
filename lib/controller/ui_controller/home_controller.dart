@@ -27,9 +27,5 @@ class HomeController extends GetxController {
   addToWishList(ProductModel product){
     wishListController.addToWishList(product);
   }
-  // favoriteColor(int index) {
-  //   if (a.wishList.contains(index)) {
-  //     return AppColores.red;
-  //   }
-  // }
+
 }

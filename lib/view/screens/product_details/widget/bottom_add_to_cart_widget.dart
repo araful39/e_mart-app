@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:morder_ecommerce_app/controller/ui_controller/product_detail_controller.dart';
 import 'package:morder_ecommerce_app/utills/constants/colors.dart';
 import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
-import 'package:morder_ecommerce_app/view/common/widgets/button/elevated_button.dart';
+import 'package:morder_ecommerce_app/view/common/widgets/elevated_button.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/products/product-quntity_add_remove.dart';
 
 class CustomBottomAddToCart extends StatelessWidget {

@@ -83,7 +83,7 @@ class CustomProductMetaData extends StatelessWidget {
         ),
         Row(
           children: [
-            const CircularImage(
+             CircularImage(
               imagePath: AppImages.shoesName,
               isNetworkImage: false,
               width: 40,

@@ -5,7 +5,7 @@ import 'package:morder_ecommerce_app/controller/ui_controller/payment_controller
 import 'package:morder_ecommerce_app/utills/constants/colors.dart';
 import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/appbar/appbar.dart';
-import 'package:morder_ecommerce_app/view/common/widgets/button/elevated_button.dart';
+import 'package:morder_ecommerce_app/view/common/widgets/elevated_button.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/products/product-quntity_add_remove.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/products/product_price_text.dart';
 import 'package:morder_ecommerce_app/view/screens/cart/widget/cart_item.dart';
@@ -25,50 +25,60 @@ class CartScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Obx(
-          () => ListView.separated(
-              itemBuilder: (context, _) {
-                var cartList = cartController.cartList[_];
-                return Column(
-                  children: [
-                    CustomCartItem(
-                      imagePath: cartList.images[0],
-                      isNetworkImage: true,
-                      brandTitle: cartList.brand,
-                      productTitle: cartList.name,
-                    ),
-                    const SizedBox(
-                      height: KSizes.sm,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          () => cartController.cartList.isNotEmpty
+              ? ListView.separated(
+                  itemBuilder: (context, _) {
+                    var cartList = cartController.cartList[_];
+                    return Column(
                       children: [
-                        CustomProductPriceText(
-                            price: cartList.discountPrice.toString()),
-                        CustomProductQuantityAddRemove(
-                          count: 1,
-                          onTapAdd: () {
-                            // Update the UI
-                          },
-                          onTapRemove: () {},
+                        CustomCartItem(
+                          imagePath: cartList.images[0],
+                          isNetworkImage: true,
+                          brandTitle: cartList.brand,
+                          productTitle: cartList.name,
                         ),
-                        IconButton(
-                          icon: const Icon(
-                            Icons.delete,
-                            size: 40,
-                          ),
-                          onPressed: () {
-                            cartController.cartList.removeAt(_);
-                          },
+                        const SizedBox(
+                          height: KSizes.sm,
                         ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            CustomProductPriceText(
+                                price: cartList.discountPrice.toString()),
+                            CustomProductQuantityAddRemove(
+                              count: 1,
+                              onTapAdd: () {
+                                // Update the UI
+                              },
+                              onTapRemove: () {},
+                            ),
+                            IconButton(
+                              icon: const Icon(
+                                Icons.delete,
+                                size: 40,
+                              ),
+                              onPressed: () {
+                                cartController.cartList.removeAt(_);
+                              },
+                            ),
+                          ],
+                        )
                       ],
-                    )
-                  ],
-                );
-              },
-              separatorBuilder: (_, __) => const SizedBox(
-                    height: KSizes.sm,
+                    );
+                  },
+                  separatorBuilder: (_, __) => const SizedBox(
+                        height: KSizes.sm,
+                      ),
+                  itemCount: cartController.cartList.length)
+              : Center(
+                  child: Text(
+                    "Empty",
+                    style: TextStyle(
+                        fontSize: KSizes.fontSizeXl,
+                        fontWeight: FontWeight.bold,
+                        color: AppColores.primary),
                   ),
-              itemCount: cartController.cartList.length),
+                ),
         ),
       ),
       bottomNavigationBar: Padding(

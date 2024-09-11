@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:morder_ecommerce_app/utills/constants/colors.dart';
 import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
 import 'package:morder_ecommerce_app/utills/constants/texts.dart';
+import 'package:morder_ecommerce_app/view/common/widgets/elevated_button.dart';
 import 'package:morder_ecommerce_app/view/screens/password_configuration/reset_password.dart';
 
 class ForgetPassword extends StatelessWidget {
@@ -10,6 +12,8 @@ class ForgetPassword extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController emailController =
+        TextEditingController(text: 'rajuslam39@gmail.com');
     return Scaffold(
       appBar: AppBar(),
       body: SingleChildScrollView(
@@ -33,6 +37,7 @@ class ForgetPassword extends StatelessWidget {
                 height: KSizes.defaultBtwSections * 2,
               ),
               TextFormField(
+                controller: emailController,
                 decoration: const InputDecoration(
                   labelText: AppTexts.email,
                   prefixIcon: Icon(Icons.email),
@@ -42,12 +47,15 @@ class ForgetPassword extends StatelessWidget {
               const SizedBox(
                 height: KSizes.defaultBtwSections,
               ),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () => Get.off(const ResetPassword()),
-                  child: const Text(AppTexts.submit),
-                ),
+              CustomElevatedButton(
+                backgroundColor: AppColores.primary,
+                name: "Submit",
+                onPressed: () async {
+                  EasyLoading.show();
+                  await Future.delayed(const Duration(seconds: 2));
+                  Get.off(const ResetPassword());
+                  EasyLoading.dismiss();
+                },
               )
             ],
           ),

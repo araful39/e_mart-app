@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:morder_ecommerce_app/controller/ui_controller/settings_controller.dart';
 import 'package:morder_ecommerce_app/utills/constants/colors.dart';
 import 'package:morder_ecommerce_app/utills/constants/image_strings.dart';
 import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
+import 'package:morder_ecommerce_app/utills/constants/texts.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/appbar/appbar.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/custom_shapes/container/primary_header_container.dart';
+import 'package:morder_ecommerce_app/view/common/widgets/elevated_button.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/list_tile/settings_menu_tile.dart';
 import 'package:morder_ecommerce_app/view/screens/settings/widget/account_privacy.dart';
 import 'package:morder_ecommerce_app/view/screens/settings/widget/my_coupons.dart';
@@ -141,10 +144,10 @@ class SettingsScreen extends StatelessWidget {
                       subTitle: 'Set recommendation',
                       icon: Icons.location_on_outlined,
                       trailing: Obx(
-                            () => Switch(
+                        () => Switch(
                           value: settingsController.isLocation.value,
                           onChanged: (values) {
-                            settingsController.isLocation.value=values;
+                            settingsController.isLocation.value = values;
                           },
                         ),
                       ),
@@ -157,23 +160,20 @@ class SettingsScreen extends StatelessWidget {
                         () => Switch(
                           value: settingsController.isSafaMode.value,
                           onChanged: (value) {
-                            settingsController.isSafaMode.value=  value;
+                            settingsController.isSafaMode.value = value;
                           },
                         ),
                       ),
                     ),
-
                     const SizedBox(
                       height: KSizes.defaultBtwSections,
                     ),
-                    SizedBox(
-                      width: double.infinity,
-                      child: OutlinedButton(
-                          onPressed: () async {
-                            Get.offAll(const SignInScreen());
-                          },
-                          child: const Text("LogOut")),
-                    )
+                    CustomElevatedButton(
+                        name: "Log Out",
+                        onPressed: () {
+                          EasyLoading.showSuccess("LogOut Success");
+                          Get.offAll(const SignInScreen());
+                        })
                   ],
                 ),
               )

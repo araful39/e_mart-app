@@ -19,10 +19,10 @@ class CustomSocialButton extends StatelessWidget {
                 borderRadius: BorderRadius.circular(100)),
             child: IconButton(
                 onPressed: () {},
-                icon: const Image(
-                    height: KSizes.iconMd,
-                    width: KSizes.iconMd,
-                    image: AssetImage(AppImages.google)))),
+                icon:  const Image(
+                    height: KSizes.iconLg,
+                    width: KSizes.iconLg,
+                    image: AssetImage(AppImages.google),))),
         const SizedBox(
           width: KSizes.spaceBtwItems,
         ),
@@ -33,8 +33,8 @@ class CustomSocialButton extends StatelessWidget {
             child: IconButton(
                 onPressed: () {},
                 icon: const Image(
-                    height: KSizes.iconMd,
-                    width: KSizes.iconMd,
+                    height: KSizes.iconLg,
+                    width: KSizes.iconLg,
                     image: AssetImage(AppImages.facebook)))),
       ],
     );

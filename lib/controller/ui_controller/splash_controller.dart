@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:morder_ecommerce_app/view/screens/signin/signin.dart';
+import 'package:morder_ecommerce_app/view/screens/onboard/onboard_one.dart';
 
 class SplashController extends GetxController {
   @override
@@ -11,6 +11,6 @@ class SplashController extends GetxController {
   void nextPage() async {
     await Future.delayed(const Duration(seconds: 5));
 
-    Get.offAll(const SignInScreen());
+    Get.offAll(const OnboardOne());
   }
 }
