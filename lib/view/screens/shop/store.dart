@@ -13,6 +13,7 @@ import 'package:morder_ecommerce_app/view/common/widgets/layout/grid_layout.dart
 import 'package:morder_ecommerce_app/view/common/widgets/products/cart_menu_icon.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/texts/section_heading.dart';
 import 'package:morder_ecommerce_app/view/screens/cart/cart.dart';
+import 'package:morder_ecommerce_app/view/screens/search.dart';
 import 'package:morder_ecommerce_app/view/screens/shop/view_brand.dart';
 import 'package:morder_ecommerce_app/view/screens/shop/widget/category_tab.dart';
 
@@ -74,7 +75,9 @@ class StoreScreen extends StatelessWidget {
                               ),
                               CustomSearchContainer(
                                 padding: EdgeInsets.zero,
-                                onpress: () {},
+                                onpress: () {
+                                  Get.to(()=>SearchScreen());
+                                },
                               ),
                               const SizedBox(
                                 height: KSizes.defaultBtwSections / 3,

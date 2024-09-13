@@ -15,7 +15,7 @@ class VerifyEmailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(VerificationController());
+   VerificationController verificationController= Get.put(VerificationController());
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -66,7 +66,7 @@ class VerifyEmailScreen extends StatelessWidget {
               CustomElevatedButton(
                 name: AppTexts.rContinue,
                 onPressed: () {
-                  Get.to(()=>OTPScreen());
+                  Get.to(()=>OTPScreen(verifyOtp: verificationController.verifyOTP,));
                 },
               ),
               const SizedBox(

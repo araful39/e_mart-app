@@ -6,16 +6,17 @@ class CustomGridLayout extends StatelessWidget {
     super.key,
     required this.itemCount,
     this.mainAxisExtent,
-    required this.itemBuilder,
+    required this.itemBuilder, this.physics,
   });
   final int itemCount;
   final double? mainAxisExtent;
   final Widget? Function(BuildContext, int) itemBuilder;
+  final ScrollPhysics? physics;
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
         padding: EdgeInsets.zero,
-        physics: const NeverScrollableScrollPhysics(),
+        physics: physics??const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         itemCount: itemCount,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

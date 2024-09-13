@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
+import 'package:morder_ecommerce_app/view/common/widgets/elevated_button.dart';
 import 'package:morder_ecommerce_app/view/screens/signin/signin.dart';
 
 class OnboardThree extends StatelessWidget {
@@ -10,10 +11,10 @@ class OnboardThree extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: KSizes.md),
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset("assets/images/onboard/three.png"),
@@ -34,21 +35,22 @@ class OnboardThree extends StatelessWidget {
                   style: TextStyle(
                     fontSize: KSizes.fontSizeLg,
                   ),
-                )
-              ],
-            ),
-            SizedBox(
-              width: Get.width,
-              child: OutlinedButton(
+                ),
+                SizedBox(
+                  height: Get.height * 0.1,
+                ),
+                CustomElevatedButton(
+                  name: "Next",
                   onPressed: () {
                     Get.offAll(() => const SignInScreen());
                   },
-                  child: const Text("Next")),
+                ),
+                const SizedBox(
+                  height: KSizes.lg,
+                )
+              ],
             ),
-            const SizedBox(
-              height: KSizes.lg,
-            )
-          ],
+          ),
         ),
       ),
     );

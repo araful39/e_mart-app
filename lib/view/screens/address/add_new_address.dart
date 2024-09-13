@@ -28,7 +28,7 @@ class CustomAddNewAddress extends StatelessWidget {
         child: Column(
           children: [
              CustomTextFormField(labelName: 'Name', controller: nameController,),
-             CustomTextFormField(iconData: Icons.phone, labelName: 'Phone Number', controller: phoneNumber,),
+             CustomTextFormField(prefixIcon: Icons.phone, labelName: 'Phone Number', controller: phoneNumber,),
              Row(
               children: [
                 Flexible(
@@ -36,7 +36,7 @@ class CustomAddNewAddress extends StatelessWidget {
                     padding: EdgeInsets.only(right: 10),
                     child: CustomTextFormField(
 
-                      iconData: Icons.streetview, labelName: 'Street', controller: streetController,
+                      prefixIcon: Icons.streetview, labelName: 'Street', controller: streetController,
                     ),
                   ),
                 ),
@@ -44,7 +44,7 @@ class CustomAddNewAddress extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsets.only(left: 10),
                     child: CustomTextFormField(
-                      iconData: Icons.post_add, labelName: 'Postal Code', controller: postCode,
+                      prefixIcon: Icons.post_add, labelName: 'Postal Code', controller: postCode,
                     ),
                   ),
                 ),
@@ -57,7 +57,7 @@ class CustomAddNewAddress extends StatelessWidget {
                     padding: EdgeInsets.only(right: 10),
                     child: CustomTextFormField(
 
-                      iconData: Icons.location_city, labelName: 'City', controller: cityController,
+                      prefixIcon: Icons.location_city, labelName: 'City', controller: cityController,
                     ),
                   ),
                 ),
@@ -65,13 +65,13 @@ class CustomAddNewAddress extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsets.only(left: 10),
                     child: CustomTextFormField(
-                      iconData: Icons.real_estate_agent, labelName: 'State', controller: statController,
+                      prefixIcon: Icons.real_estate_agent, labelName: 'State', controller: statController,
                     ),
                   ),
                 ),
               ],
             ),
-             CustomTextFormField(labelName: "Country",iconData: Icons.blur_circular, controller: countryController,),
+             CustomTextFormField(labelName: "Country",prefixIcon: Icons.blur_circular, controller: countryController,),
             CustomElevatedButton(name: "Save", onPressed: (){
               EasyLoading.showSuccess("Save");
              Get.back();

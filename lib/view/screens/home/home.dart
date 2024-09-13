@@ -6,7 +6,7 @@ import 'package:morder_ecommerce_app/controller/ui_controller/cart_controller.da
 import 'package:morder_ecommerce_app/controller/ui_controller/home_controller.dart';
 import 'package:morder_ecommerce_app/controller/ui_controller/wish_list_controller.dart';
 import 'package:morder_ecommerce_app/damy_data/category_list.dart';
-import 'package:morder_ecommerce_app/damy_data/damy_data.dart';
+import 'package:morder_ecommerce_app/damy_data/product_list.dart';
 import 'package:morder_ecommerce_app/utills/constants/colors.dart';
 import 'package:morder_ecommerce_app/utills/constants/image_strings.dart';
 import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
@@ -22,6 +22,8 @@ import 'package:morder_ecommerce_app/view/common/widgets/texts/section_heading.d
 import 'package:morder_ecommerce_app/view/common/widgets/custom_vertical_image_text.dart';
 import 'package:morder_ecommerce_app/view/screens/cart/cart.dart';
 import 'package:morder_ecommerce_app/view/screens/product_details/product_detail.dart';
+import 'package:morder_ecommerce_app/view/screens/search.dart';
+import 'package:morder_ecommerce_app/view/screens/shop/store.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -74,7 +76,9 @@ class HomeScreen extends StatelessWidget {
                       height: KSizes.sm,
                     ),
                     CustomSearchContainer(
-                      onpress: () {},
+                      onpress: () {
+                        Get.to(() => SearchScreen());
+                      },
                     ),
                     const SizedBox(
                       height: KSizes.md,
@@ -82,10 +86,7 @@ class HomeScreen extends StatelessWidget {
                     CustomSectionHeading(
                       showActionButton: false,
                       name: "Category",
-
                       textColor: AppColores.white,
-
-
                     ),
                     const SizedBox(
                       height: KSizes.sm,
@@ -97,9 +98,14 @@ class HomeScreen extends StatelessWidget {
                           itemCount: categories.length,
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (_, index) {
-                            return  CustomVerticalImageText(
-                              text:categories[index].name,
-                              netImagePath:categories[index].imageUrl,
+                            return GestureDetector(
+                              onTap: () {
+                                Get.to(() => StoreScreen());
+                              },
+                              child: CustomVerticalImageText(
+                                text: categories[index].name,
+                                netImagePath: categories[index].imageUrl,
+                              ),
                             );
                           }),
                     )

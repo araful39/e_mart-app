@@ -13,7 +13,7 @@ class SplashScreen extends StatelessWidget {
     return const Scaffold(
       body: Center(
         child: CustomRoundedImage(
-            imageUrl: AppImages.handshake, isNetworkImage: false),
+            imageUrl: "assets/app_logo.png", isNetworkImage: false),
       ),
     );
   }

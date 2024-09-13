@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
+import 'package:morder_ecommerce_app/controller/ui_controller/verify_controller.dart';
 import 'package:morder_ecommerce_app/utills/constants/colors.dart';
 import 'package:morder_ecommerce_app/utills/constants/image_strings.dart';
 import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
@@ -14,6 +15,8 @@ class ResetPassword extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    VerificationController verificationController =
+        Get.put(VerificationController());
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -56,7 +59,9 @@ class ResetPassword extends StatelessWidget {
                   onPressed: () async {
                     EasyLoading.show();
                     await Future.delayed(const Duration(seconds: 2));
-                    Get.off(() => const OTPScreen());
+                    Get.off(() => OTPScreen(
+                          verifyOtp: verificationController.newPassword,
+                        ));
                     EasyLoading.dismiss();
                   }),
               const SizedBox(

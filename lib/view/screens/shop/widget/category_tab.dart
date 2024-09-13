@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:morder_ecommerce_app/controller/ui_controller/cart_controller.dart';
 import 'package:morder_ecommerce_app/controller/ui_controller/wish_list_controller.dart';
-import 'package:morder_ecommerce_app/damy_data/damy_data.dart';
+import 'package:morder_ecommerce_app/damy_data/product_list.dart';
 import 'package:morder_ecommerce_app/utills/constants/colors.dart';
 import 'package:morder_ecommerce_app/utills/constants/sizes.dart';
 import 'package:morder_ecommerce_app/view/common/widgets/brand/brand_show_case.dart';
